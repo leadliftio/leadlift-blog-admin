@@ -1,15 +1,11 @@
 import React from 'react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa6'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Footer } from '../../../payload/payload-types'
-import { fetchFooter, fetchGlobals } from '../../_api/fetchGlobals'
-import { ThemeSelector } from '../../_providers/Theme/ThemeSelector'
-import { Gutter } from '../Gutter'
-import { CMSLink } from '../Link'
+import { fetchFooter } from '../../_api/fetchGlobals'
 import brandLogo from './brandLogo.svg'
-
-import classes from './index.module.scss'
 
 export async function Footer() {
   let footer: Footer | null = null
@@ -26,13 +22,79 @@ export async function Footer() {
   const navItems = footer?.navItems || []
 
   return (
-    <footer className={classes.footer}>
-      <Gutter className={classes.wrap}>
+    // <footer className={classes.footer}>
+    //   <Gutter className={classes.wrap}>
+    //     <div className="w-full flex flex-col">
+    //       <div className="footer-links md:mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-[18px]">
+    //         <div className="flex">
+    //           <Link href={'/'} className="">
+    //             <img src={brandLogo} alt="LeadLift" className="h-[32px]" />
+    //           </Link>
+    //         </div>
+    //         <ul className="flex flex-wrap md:flex-nowrap text-center justify-center items-center gap-8 gap-y-[10px] md:gap-16 px-5">
+    //           <Link
+    //             href="/terms-of-use"
+    //             className="font-outfit text-brandBlack text-base md:text-[18px] font-normal flex-1 flex-grow flex-nowrap flex"
+    //           >
+    //             Terms of use
+    //           </Link>
+    //           <Link
+    //             href="/privacy-policy"
+    //             className="font-outfit text-brandBlack text-base md:text-[18px] font-normal"
+    //           >
+    //             Privacy policy
+    //           </Link>
+    //           <Link
+    //             href="/#about"
+    //             className="font-outfit text-brandBlack text-base md:text-[18px] font-normal"
+    //           >
+    //             About Leadlift
+    //           </Link>
+    //         </ul>
+    //         <div className=""></div>
+    //       </div>
+    //       <div className="social-media w-full flex items-center justify-center gap-9 mb-6">
+    //         <Link
+    //           href="https://www.linkedin.com/company/lead_/"
+    //           className="linkedin social-media-icon text-white"
+    //         >
+    //           <FaLinkedinIn />
+    //         </Link>
+    //         <Link
+    //           href="https://twitter.com/leadliftio"
+    //           target="_blank"
+    //           className="linkedin social-media-icon text-white"
+    //         >
+    //           <FaTwitter />
+    //         </Link>
+    //         <Link
+    //           href="https://www.facebook.com/leadliftio"
+    //           target="_blank"
+    //           className="linkedin social-media-icon text-white"
+    //         >
+    //           <FaFacebookF />
+    //         </Link>
+    //         <Link
+    //           href="https://www.instagram.com/leadliftio/"
+    //           target="_blank"
+    //           className="linkedin social-media-icon text-white"
+    //         >
+    //           <FaInstagram />
+    //         </Link>
+    //       </div>
+    //       <p className="text-center w-full text-textGray font-outfit text-base leading-[24px]">
+    //         &copy; 2023, Leadlift. All rights reserved.
+    //       </p>
+    //     </div>
+    //   </Gutter>
+    // </footer>
+    <footer className="footer bottom-0 w-full bg-[#EDF0F8] px-[30px] py-[65px] mb-[0px] md:px-[150px] md:py-[100px]">
+      <div className="container max-w-[1200px] mx-auto">
         <div className="w-full flex flex-col">
           <div className="footer-links md:mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-[18px]">
             <div className="flex">
               <Link href={'/'} className="">
-                <img src={brandLogo} alt="LeadLift" className="h-[32px]" />
+                <Image src={brandLogo} alt="LeadLift" className="h-[32px]" />
               </Link>
             </div>
             <ul className="flex flex-wrap md:flex-nowrap text-center justify-center items-center gap-8 gap-y-[10px] md:gap-16 px-5">
@@ -90,7 +152,7 @@ export async function Footer() {
             &copy; 2023, Leadlift. All rights reserved.
           </p>
         </div>
-      </Gutter>
+      </div>
     </footer>
   )
 }
