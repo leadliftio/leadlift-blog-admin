@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa6'
 import Link from 'next/link'
 
 import { Footer } from '../../../payload/payload-types'
@@ -6,6 +7,7 @@ import { fetchFooter, fetchGlobals } from '../../_api/fetchGlobals'
 import { ThemeSelector } from '../../_providers/Theme/ThemeSelector'
 import { Gutter } from '../Gutter'
 import { CMSLink } from '../Link'
+import brandLogo from './brandLogo.svg'
 
 import classes from './index.module.scss'
 
@@ -26,32 +28,68 @@ export async function Footer() {
   return (
     <footer className={classes.footer}>
       <Gutter className={classes.wrap}>
-        <Link href="/">
-          <picture>
-            <img
-              className={classes.logo}
-              alt="Payload Logo"
-              src="https://raw.githubusercontent.com/payloadcms/payload/master/src/admin/assets/images/payload-logo-light.svg"
-            />
-          </picture>
-        </Link>
-        <nav className={classes.nav}>
-          <ThemeSelector />
-          {navItems.map(({ link }, i) => {
-            return <CMSLink key={i} {...link} />
-          })}
-          <Link href="/admin">Admin</Link>
-          <Link
-            href="https://github.com/payloadcms/payload/tree/master/templates/website"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Source Code
-          </Link>
-          <Link href="https://payloadcms.com" target="_blank" rel="noopener noreferrer">
-            Payload
-          </Link>
-        </nav>
+        <div className="w-full flex flex-col">
+          <div className="footer-links md:mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-[18px]">
+            <div className="flex">
+              <Link href={'/'} className="">
+                <img src={brandLogo} alt="LeadLift" className="h-[32px]" />
+              </Link>
+            </div>
+            <ul className="flex flex-wrap md:flex-nowrap text-center justify-center items-center gap-8 gap-y-[10px] md:gap-16 px-5">
+              <Link
+                href="/terms-of-use"
+                className="font-outfit text-brandBlack text-base md:text-[18px] font-normal flex-1 flex-grow flex-nowrap flex"
+              >
+                Terms of use
+              </Link>
+              <Link
+                href="/privacy-policy"
+                className="font-outfit text-brandBlack text-base md:text-[18px] font-normal"
+              >
+                Privacy policy
+              </Link>
+              <Link
+                href="/#about"
+                className="font-outfit text-brandBlack text-base md:text-[18px] font-normal"
+              >
+                About Leadlift
+              </Link>
+            </ul>
+            <div className=""></div>
+          </div>
+          <div className="social-media w-full flex items-center justify-center gap-9 mb-6">
+            <Link
+              href="https://www.linkedin.com/company/lead_/"
+              className="linkedin social-media-icon text-white"
+            >
+              <FaLinkedinIn />
+            </Link>
+            <Link
+              href="https://twitter.com/leadliftio"
+              target="_blank"
+              className="linkedin social-media-icon text-white"
+            >
+              <FaTwitter />
+            </Link>
+            <Link
+              href="https://www.facebook.com/leadliftio"
+              target="_blank"
+              className="linkedin social-media-icon text-white"
+            >
+              <FaFacebookF />
+            </Link>
+            <Link
+              href="https://www.instagram.com/leadliftio/"
+              target="_blank"
+              className="linkedin social-media-icon text-white"
+            >
+              <FaInstagram />
+            </Link>
+          </div>
+          <p className="text-center w-full text-textGray font-outfit text-base leading-[24px]">
+            &copy; 2023, Leadlift. All rights reserved.
+          </p>
+        </div>
       </Gutter>
     </footer>
   )
