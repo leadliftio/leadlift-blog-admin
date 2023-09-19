@@ -18,9 +18,6 @@ import Users from './collections/Users'
 import BeforeDashboard from './components/BeforeDashboard'
 import BeforeLogin from './components/BeforeLogin'
 import { seed } from './endpoints/seed'
-import { Footer } from './globals/Footer'
-import { Header } from './globals/Header'
-import { Settings } from './globals/Settings'
 
 const generateTitle: GenerateTitle = () => {
   return 'My Website'
