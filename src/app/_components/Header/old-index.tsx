@@ -79,7 +79,7 @@ export async function Header() {
           <nav className="w-screen bg-[#EDF0F8] md:py-[22px] p-[16px] md:px[150px] fixed z-[8500] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.2)] md:shadow-none">
             <div className="container max-w-[1200px] mx-auto">
               <div className="w-full flex items-center justify-between">
-                <Link href={'/'} className="">
+                <Link href={'https://leadlift.io'} className="">
                   <Image src={brandLogo} alt="LeadLift" className="h-[32px] w-fit" />
                 </Link>
 
@@ -165,7 +165,7 @@ export async function Header() {
             <div className="h-[90%] pt-[65px] pb-[16px] flex flex-col justify-between relative z-50">
               <div className="flex flex-col gap-[20px] text-brandBlack font-normal font-openSans text-[20px]">
                 <div className="text-brandBlack flex items-center gap-[6px] group relative">
-                  <Link href="/our-services" onClick={undefined}>
+                  <Link href="https://leadlift.io/our-services" onClick={undefined}>
                     Services
                   </Link>
                 </div>
@@ -176,18 +176,19 @@ export async function Header() {
                   <a href="/our-services/#community-management">Community management</a>
                 </div>
                 <Link
-                  href="/pricing"
+                  href="https://leadlift.io/pricing"
                   onClick={undefined}
                   className="pb-[20px] border-b border-solid border-[#D9D9D9]"
                 >
                   Pricing
                 </Link>
-                {/* <Link
-              href="/blog"
-              className="text-brandBlack font-medium font-outfit text-[24px]"
-              onClick={() => setOpen(false)}>
-              Blog
-            </Link> */}
+                <Link
+                  href="https://blog.leadlift.io/posts"
+                  className="text-brandBlack font-medium font-outfit text-[24px]"
+                  onClick={undefined}
+                >
+                  Blog
+                </Link>
               </div>
               <div className="w-full mt-[30px]">
                 <div
