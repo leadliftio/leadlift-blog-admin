@@ -1,8 +1,8 @@
+'use client'
+
 {
   /* eslint-disable @next/next/no-img-element */
 }
-
-;('use client')
 
 import React from 'react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa6'
