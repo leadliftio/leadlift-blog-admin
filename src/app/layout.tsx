@@ -1,5 +1,6 @@
 /* eslint-disable simple-import-sort/imports */
 import { Metadata } from 'next'
+import { Open_Sans, Outfit, Poppins } from 'next/font/google'
 import React from 'react'
 
 import { AdminBar } from './_components/AdminBar'
@@ -10,8 +11,6 @@ import { InitTheme } from './_providers/Theme/InitTheme'
 import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 
 import './_css/app.scss'
-
-import { Outfit, Poppins, Open_Sans } from 'next/font/google'
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -38,7 +37,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
       </head>
-      <body className={`${outfit.variable} ${poppins.variable} ${open_sans.variable}`}>
+      <body className={`${outfit.variable} `}>
         <Providers>
           <AdminBar />
           {/* @ts-expect-error Server Component */}
