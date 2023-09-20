@@ -88,7 +88,7 @@ export async function Footer() {
     //     </div>
     //   </Gutter>
     // </footer>
-    <footer className="footer bottom-0 w-full bg-[#EDF0F8] px-[30px] py-[65px] mb-[0px] md:px-[0px] md:py-[0px]">
+    <footer className="footer bottom-0 w-full bg-[#EDF0F8] px-[30px] py-[65px] mb-[0px] md:px-[0px] md:py-[100px]">
       <div className="container max-w-[1200px] mx-auto">
         <div className="w-full flex flex-col">
           <div className="footer-links md:mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-[18px]">
@@ -97,7 +97,7 @@ export async function Footer() {
                 <Image src={brandLogo} alt="LeadLift" className="h-[32px] w-fit" />
               </Link>
             </div>
-            <ul className="flex flex-wrap md:flex-nowrap text-center justify-center items-center gap-8 gap-y-[10px] md:gap-16 px-5">
+            <ul className="mb-0 flex flex-wrap md:flex-nowrap text-center justify-center items-center gap-8 gap-y-[10px] md:gap-16 px-5">
               <Link
                 href="/terms-of-use"
                 className="font-outfit text-brandBlack text-base md:text-[18px] font-normal flex-1 flex-grow flex-nowrap flex m-0"
