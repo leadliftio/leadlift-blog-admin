@@ -80,7 +80,7 @@ export async function Header() {
             <div className="container max-w-[1200px] mx-auto">
               <div className="w-full flex items-center justify-between">
                 <Link href={'/'} className="">
-                  <Image src={brandLogo} alt="LeadLift" className="h-[32px]" />
+                  <Image src={brandLogo} alt="LeadLift" className="h-[32px] w-fit" />
                 </Link>
 
                 <div className="hidden nav-items lg:flex items-center gap-8">
