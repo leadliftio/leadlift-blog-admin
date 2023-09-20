@@ -91,8 +91,8 @@ export async function Footer() {
     <footer className="footer bottom-0 w-full bg-[#EDF0F8] px-[30px] py-[65px] mb-[0px] md:px-[0px] md:py-[100px]">
       <div className="container max-w-[1200px] mx-auto">
         <div className="w-full flex flex-col">
-          <div className="footer-links md:mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-[18px]">
-            <div className="flex">
+          <div className="footer-links md:mb-8 flex flex-col md:flex-row items-start md:items-center justify-center gap-[18px]">
+            <div className="flex lg:absolute lg:left-0">
               <Link href={'/'} className="">
                 <Image src={brandLogo} alt="LeadLift" className="h-[32px] w-fit" />
               </Link>
@@ -117,7 +117,7 @@ export async function Footer() {
                 About Leadlift
               </Link>
             </ul>
-            <div className=""></div>
+            {/* <div className=""></div> */}
           </div>
           <div className="social-media w-full flex items-center justify-center gap-9 mb-6">
             <Link
