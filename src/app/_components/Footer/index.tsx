@@ -88,13 +88,13 @@ export async function Footer() {
     //     </div>
     //   </Gutter>
     // </footer>
-    <footer className="footer bottom-0 w-full bg-[#EDF0F8] px-[30px] py-[65px] mb-[0px] md:px-[150px] md:py-[100px]">
+    <footer className="footer bottom-0 w-full bg-[#EDF0F8] px-[30px] py-[65px] mb-[0px] md:px-[0px] md:py-[0px]">
       <div className="container max-w-[1200px] mx-auto">
         <div className="w-full flex flex-col">
           <div className="footer-links md:mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-[18px]">
             <div className="flex">
               <Link href={'/'} className="">
-                <Image src={brandLogo} alt="LeadLift" className="h-[32px]" />
+                <Image src={brandLogo} alt="LeadLift" className="h-[32px] w-fit" />
               </Link>
             </div>
             <ul className="flex flex-wrap md:flex-nowrap text-center justify-center items-center gap-8 gap-y-[10px] md:gap-16 px-5">
