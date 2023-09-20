@@ -9,7 +9,30 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brandBlue: '#000080',
+        brandGreen: '#50C878',
+        brandGreenLighter: '#50CE78',
+        brandLightPurple: '#CCCCE5',
+        textGray: '#808080',
+        brandBlack: '#23282B',
+      },
+      boxShadow: {
+        card: '-8px 0px 20px 0px rgba(0, 0, 0, 0.07), 8px 8px 20px 0px rgba(0, 0, 0, 0.07);',
+      },
+    },
+    fontFamily: {
+      montserrat: ['Montserrat', 'sans-serif'],
+      openSans: ["'Open Sans'", 'sans-serif'],
+      poppins: ['Poppins', 'sans-serif'],
+      raleway: ['Raleway', 'sans-serif'],
+      outfit: ['Outfit', 'sans-serif'],
+    },
+    // screens: {
+    //   md: "800px",
+    //   // => @media (min-width: 992px) { ... }
+    // },
   },
   plugins: [],
 }

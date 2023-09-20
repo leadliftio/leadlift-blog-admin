@@ -100,19 +100,19 @@ export async function Footer() {
             <ul className="flex flex-wrap md:flex-nowrap text-center justify-center items-center gap-8 gap-y-[10px] md:gap-16 px-5">
               <Link
                 href="/terms-of-use"
-                className="font-outfit text-brandBlack text-base md:text-[18px] font-normal flex-1 flex-grow flex-nowrap flex"
+                className="font-outfit text-brandBlack text-base md:text-[18px] font-normal flex-1 flex-grow flex-nowrap flex m-0"
               >
                 Terms of use
               </Link>
               <Link
                 href="/privacy-policy"
-                className="font-outfit text-brandBlack text-base md:text-[18px] font-normal"
+                className="font-outfit text-brandBlack text-base md:text-[18px] font-normal m-0"
               >
                 Privacy policy
               </Link>
               <Link
                 href="/#about"
-                className="font-outfit text-brandBlack text-base md:text-[18px] font-normal"
+                className="font-outfit text-brandBlack text-base md:text-[18px] font-normal m-0"
               >
                 About Leadlift
               </Link>
@@ -148,7 +148,7 @@ export async function Footer() {
               <FaInstagram />
             </Link>
           </div>
-          <p className="text-center w-full text-textGray font-outfit text-base leading-[24px]">
+          <p className="text-center w-full text-textGray font-outfit text-base leading-[24px] m-0">
             &copy; 2023, Leadlift. All rights reserved.
           </p>
         </div>
