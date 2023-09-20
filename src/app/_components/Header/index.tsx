@@ -1,14 +1,30 @@
 'use client'
 
+{
+  /* eslint-disable @next/next/no-img-element */
+}
+
 import React from 'react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa6'
 import { Link, useNavigate } from 'react-router-dom'
 
+import { Header } from '../../../payload/payload-types'
+import { fetchHeader } from '../../_api/fetchGlobals'
 import brandLogo from './brandLogo.svg'
 import CloseMenu from './Close_MD.svg'
 import MenuIcon from './menu@2x.svg'
 
-const Navbar = () => {
+export async function Navbar() {
+  let header: Header | null = null
+
+  try {
+    header = await fetchHeader()
+  } catch (error) {
+    // When deploying this template on Payload Cloud, this page needs to build before the APIs are live
+    // So swallow the error here and simply render the header without nav items if one occurs
+    // in production you may want to redirect to a 404  page or at least log the error somewhere
+    // console.error(error)
+  }
   const navigate = useNavigate()
 
   const [isOpen, setOpen] = React.useState(false)
