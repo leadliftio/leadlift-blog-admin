@@ -27,7 +27,7 @@ module.exports = {
       openSans: ["'Open Sans'", 'sans-serif'],
       poppins: ['Poppins', 'sans-serif'],
       raleway: ['Raleway', 'sans-serif'],
-      outfit: ['Outfit', 'sans-serif'],
+      outfit: ['var(--font-outfit)'],
     },
     // screens: {
     //   md: "800px",
