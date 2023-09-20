@@ -37,12 +37,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
       </head>
-      <body className={`${outfit.variable} `}>
+      <body className={`${outfit.variable} ${poppins.variable} ${open_sans.variable}`}>
         <Providers>
           <AdminBar />
           {/* @ts-expect-error Server Component */}
           <Header />
-          <div className="pt-[75px] bg-[#CCCCE5]">{children}</div>
+          {children}
           {/* @ts-expect-error */}
           <Footer />
         </Providers>
