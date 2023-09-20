@@ -17,7 +17,6 @@ import { Projects } from './collections/Projects'
 import Users from './collections/Users'
 import BeforeDashboard from './components/BeforeDashboard'
 import BeforeLogin from './components/BeforeLogin'
-import { seed } from './endpoints/seed'
 
 const generateTitle: GenerateTitle = () => {
   return 'My Website'

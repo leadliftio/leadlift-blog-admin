@@ -80,6 +80,12 @@ export const Card: React.FC<{
             {description && <p className={classes.description}>{sanitizedDescription}</p>}
           </div>
         )}
+        <div className={classes.actionBar}>
+          <div></div>
+          <Link href={href} className={classes.linkToArticle}>
+            Read article
+          </Link>
+        </div>
       </div>
     </div>
   )
