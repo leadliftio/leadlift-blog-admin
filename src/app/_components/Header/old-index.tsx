@@ -11,12 +11,12 @@ import { useRouter } from 'next/navigation'
 
 import { Header } from '../../../payload/payload-types'
 import { fetchHeader } from '../../_api/fetchGlobals'
-import { Gutter } from '../Gutter'
+// import { Gutter } from '../Gutter'
 import brandLogo from './brandLogo.svg'
 import CloseMenu from './Close_MD.svg'
 import MenuIcon from './menu@2x.svg'
-import { HeaderNav } from './Nav'
 
+// import { HeaderNav } from './Nav'
 import classes from './index.module.scss'
 
 export async function Header() {
@@ -31,45 +31,45 @@ export async function Header() {
     // console.error(error)
   }
 
-  const router = useRouter()
+  // const router = useRouter()
 
-  const [isOpen, setOpen] = React.useState(false)
-  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false)
-  const dropdownRef = React.useRef<any>(null)
-  const mobileNavRef = React.useRef<any>(null)
+  // const [isOpen, setOpen] = React.useState(false)
+  // const [isDropdownOpen, setIsDropdownOpen] = React.useState(false)
+  // const dropdownRef = React.useRef<any>(null)
+  // const mobileNavRef = React.useRef<any>(null)
 
-  const handleBookACall = () => {
-    router.push('/book-a-call')
-  }
+  // const handleBookACall = () => {
+  //   router.push('/book-a-call')
+  // }
 
-  const openDropdown = () => {
-    setIsDropdownOpen(prevState => !prevState)
-  }
+  // const openDropdown = () => {
+  //   setIsDropdownOpen(prevState => !prevState)
+  // }
 
-  const handleClickOutside = (event: any) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsDropdownOpen(false)
-    }
-  }
+  // const handleClickOutside = (event: any) => {
+  //   if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+  //     setIsDropdownOpen(false)
+  //   }
+  // }
+
+  // // React.useEffect(() => {
+  // if (!isOpen) {
+  //   document.body.style.overflowY = 'scroll'
+  // } else {
+  //   document.body.style.overflowY = 'hidden'
+  // }
+  // // }, [isOpen]);
 
   // React.useEffect(() => {
-  if (!isOpen) {
-    document.body.style.overflowY = 'scroll'
-  } else {
-    document.body.style.overflowY = 'hidden'
-  }
-  // }, [isOpen]);
-
-  React.useEffect(() => {
-    if (isDropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isDropdownOpen])
+  //   if (isDropdownOpen) {
+  //     document.addEventListener('mousedown', handleClickOutside)
+  //   } else {
+  //     document.removeEventListener('mousedown', handleClickOutside)
+  //   }
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside)
+  //   }
+  // }, [isDropdownOpen])
 
   return (
     <>
@@ -85,7 +85,7 @@ export async function Header() {
                 <div className="hidden nav-items lg:flex items-center gap-8">
                   <div className="text-brandBlack font-normal font-openSans text-[20px] flex items-center gap-[6px] group relative">
                     <Link href="/our-services">Services</Link>
-                    <div className="cursor-pointer" onClick={openDropdown}>
+                    <div className="cursor-pointer" onClick={undefined}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -105,9 +105,8 @@ export async function Header() {
                     </div>
                     <div
                       className={`dropdown absolute top-10 bg-white w-max rounded-[8px] p-[12px] shadow-card transition-opacity duration-[450ms] ${
-                        isDropdownOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                        false ? 'opacity-100' : 'opacity-0 pointer-events-none'
                       }`}
-                      ref={dropdownRef}
                     >
                       {/* Dropdown */}
                       <div className=" flex flex-col gap-[6px] text-brandBlack font-openSans text-[14px] font-normal">
@@ -133,7 +132,7 @@ export async function Header() {
                 <div className="hidden lg:flex">
                   <div
                     className={`py-[12px] rounded-[8px] bg-brandGreen flex items-center justify-center gap-[10px] text-center text-white text-base font-poppins font-semibold border-none cursor-pointer z-50 w-[200px]`}
-                    onClick={handleBookACall}
+                    onClick={undefined}
                   >
                     {' '}
                     Book a call
@@ -141,7 +140,7 @@ export async function Header() {
                 </div>
                 <div
                   className="block lg:hidden w-8 h-8 border border-solid border-[#D3D3D3] rounded-[4px]"
-                  onClick={() => setOpen(!isOpen)}
+                  onClick={undefined}
                 >
                   {/* <Hamburger
                 toggled={isOpen}
@@ -151,7 +150,7 @@ export async function Header() {
                 size={24}
                 rounded
               /> */}
-                  {!isOpen ? <img src={MenuIcon} alt="" /> : <img src={CloseMenu} alt="" />}
+                  {false ? <img src={MenuIcon} alt="" /> : <img src={CloseMenu} alt="" />}
                 </div>
               </div>
             </div>
@@ -159,14 +158,13 @@ export async function Header() {
           {/* <div className="w-screen h-screen overflow-hidden"> */}
           <div
             className={`w-full bg-[#EDF0F8] h-[550px] rounded-[25px] px-[16px] py-[24px] fixed z-[8080] flex flex-col divide-y-2 shadow-card transition-all duration-500 ${
-              isOpen ? 'translate-y-[0]' : 'translate-y-[-550px] z-[8500]'
+              false ? 'translate-y-[0]' : 'translate-y-[-550px] z-[8500]'
             }`}
-            ref={mobileNavRef}
           >
             <div className="h-[90%] pt-[65px] pb-[16px] flex flex-col justify-between relative z-50">
               <div className="flex flex-col gap-[20px] text-brandBlack font-normal font-openSans text-[20px]">
                 <div className="text-brandBlack flex items-center gap-[6px] group relative">
-                  <Link href="/our-services" onClick={() => setOpen(false)}>
+                  <Link href="/our-services" onClick={undefined}>
                     Services
                   </Link>
                 </div>
@@ -178,7 +176,7 @@ export async function Header() {
                 </div>
                 <Link
                   href="/pricing"
-                  onClick={() => setOpen(false)}
+                  onClick={undefined}
                   className="pb-[20px] border-b border-solid border-[#D9D9D9]"
                 >
                   Pricing
@@ -193,7 +191,7 @@ export async function Header() {
               <div className="w-full mt-[30px]">
                 <div
                   className={`py-[12px] rounded-[8px] bg-brandGreen flex items-center justify-center gap-[10px] text-center text-white text-base font-poppins font-semibold border-none cursor-pointer z-50 w-full`}
-                  onClick={handleBookACall}
+                  onClick={undefined}
                 >
                   Book a call
                 </div>
