@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-page-custom-font */
 /* eslint-disable simple-import-sort/imports */
 import { Metadata } from 'next'
 import React from 'react'
