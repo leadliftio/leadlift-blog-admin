@@ -89,7 +89,7 @@ export async function Footer() {
     //   </Gutter>
     // </footer>
     <footer className="footer bottom-0 w-full bg-[#EDF0F8] px-[30px] py-[65px] mb-[0px] md:px-[0px] md:py-[100px]">
-      <div className="container max-w-[1200px] mx-auto">
+      <div className="container max-w-[1200px] lg:relative mx-auto">
         <div className="w-full flex flex-col">
           <div className="footer-links md:mb-8 flex flex-col md:flex-row items-start md:items-center justify-center gap-[18px]">
             <div className="flex lg:absolute lg:left-0">

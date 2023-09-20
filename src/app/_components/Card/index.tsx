@@ -46,7 +46,7 @@ export const Card: React.FC<{
         )}
       </Link>
       <div className={classes.content}>
-        {showCategories && hasCategories && (
+        {/* {showCategories && hasCategories && (
           <div className={classes.leader}>
             {showCategories && hasCategories && (
               <div>
@@ -67,7 +67,7 @@ export const Card: React.FC<{
               </div>
             )}
           </div>
-        )}
+        )} */}
         {titleToUse && (
           <h4 className={classes.title}>
             <Link href={href} className={classes.titleLink}>

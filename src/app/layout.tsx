@@ -11,11 +11,22 @@ import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 
 import './_css/app.scss'
 
-import { Outfit } from 'next/font/google'
+import { Outfit, Poppins, Open_Sans } from 'next/font/google'
 
 const outfit = Outfit({
   subsets: ['latin'],
   variable: '--font-outfit',
+})
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-poppins',
+  weight: '400',
+})
+
+const open_sans = Open_Sans({
+  subsets: ['latin'],
+  variable: '--font-open_sans',
 })
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -32,7 +43,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           rel="stylesheet"
         /> */}
       </head>
-      <body className={`${outfit.variable}`}>
+      <body className={`${outfit.variable} ${poppins.variable} ${open_sans.variable}`}>
         <Providers>
           <AdminBar />
           {/* @ts-expect-error Server Component */}

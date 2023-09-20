@@ -24,8 +24,8 @@ module.exports = {
     },
     fontFamily: {
       montserrat: ['Montserrat', 'sans-serif'],
-      openSans: ["'Open Sans'", 'sans-serif'],
-      poppins: ['Poppins', 'sans-serif'],
+      openSans: ['var(--font-open_sans_'],
+      poppins: ['var(--font-poppins'],
       raleway: ['Raleway', 'sans-serif'],
       outfit: ['var(--font-outfit)'],
     },
