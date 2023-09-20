@@ -124,11 +124,12 @@ export async function Header() {
                   >
                     Pricing
                   </Link>
-                  {/* <Link
-                href="/blog"
-                className="text-brandBlack font-normal font-openSans text-[20px]">
-                Blog
-              </Link> */}
+                  <Link
+                    href="https://blog.leadlift.io/posts"
+                    className="text-brandBlack font-normal font-openSans text-[20px]"
+                  >
+                    Blog
+                  </Link>
                 </div>
                 <div className="hidden lg:flex">
                   <div
