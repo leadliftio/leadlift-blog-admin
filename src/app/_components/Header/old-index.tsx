@@ -6,6 +6,7 @@
 
 import React from 'react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa6'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
@@ -73,13 +74,13 @@ export async function Header() {
 
   return (
     <>
-      <header className={classes.header}>
+      <header>
         <>
           <nav className="w-screen bg-[#EDF0F8] md:py-[22px] p-[16px] md:px[150px] fixed z-[8500] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.2)] md:shadow-none">
             <div className="container max-w-[1200px] mx-auto">
               <div className="w-full flex items-center justify-between">
                 <Link href={'/'} className="">
-                  <img src={brandLogo} alt="LeadLift" className="h-[32px]" />
+                  <Image src={brandLogo} alt="LeadLift" className="h-[32px]" />
                 </Link>
 
                 <div className="hidden nav-items lg:flex items-center gap-8">
