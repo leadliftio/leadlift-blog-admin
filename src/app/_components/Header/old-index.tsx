@@ -136,7 +136,6 @@ export async function Header() {
                     className={`py-[12px] rounded-[8px] bg-brandGreen flex items-center justify-center gap-[10px] text-center text-white text-base font-poppins font-semibold border-none cursor-pointer z-50 w-[200px]`}
                     onClick={undefined}
                   >
-                    {' '}
                     Book a call
                   </div>
                 </div>
