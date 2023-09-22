@@ -5,7 +5,7 @@ import React from 'react'
 
 import { AdminBar } from './_components/AdminBar'
 import { Footer } from './_components/Footer'
-// import { Providers } from './_components/Header/old-index'
+import { Header } from './_components/Header/old-index'
 import { Providers } from './_providers'
 import { InitTheme } from './_providers/Theme/InitTheme'
 import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
@@ -37,12 +37,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
       </head>
-      <body>
+      <body className={`${outfit.variable} ${poppins.variable} ${open_sans.variable}`}>
         <Providers>
           <AdminBar />
           {/* @ts-expect-error Server Component */}
           <Header />
-          {/* {children} */}
+          {children}
           {/* @ts-expect-error */}
           <Footer />
         </Providers>

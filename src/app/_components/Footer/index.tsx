@@ -1,11 +1,10 @@
-/* eslint-disable simple-import-sort/imports */
-import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa6'
+import Image from 'next/image'
+import Link from 'next/link'
 
-import { fetchFooter } from '../../_api/fetchGlobals'
 import { Footer } from '../../../payload/payload-types'
+import { fetchFooter } from '../../_api/fetchGlobals'
 import brandLogo from './brandLogo.svg'
 
 export async function Footer() {
@@ -52,6 +51,7 @@ export async function Footer() {
                 About Leadlift
               </Link>
             </ul>
+            {/* <div className=""></div> */}
           </div>
           <div className="social-media w-full flex items-center justify-center gap-9 mb-6">
             <Link
