@@ -25,14 +25,10 @@ module.exports = {
     fontFamily: {
       montserrat: ['Montserrat', 'sans-serif'],
       openSans: ['var(--font-open_sans)'],
-      poppins: ['var(--font-poppins'],
+      poppins: ['var(--font-poppins)'],
       raleway: ['Raleway', 'sans-serif'],
       outfit: ['var(--font-outfit)'],
     },
-    // screens: {
-    //   md: "800px",
-    //   // => @media (min-width: 992px) { ... }
-    // },
   },
   plugins: [],
 }

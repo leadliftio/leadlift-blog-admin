@@ -32,46 +32,6 @@ export async function Header() {
     // console.error(error)
   }
 
-  // const router = useRouter()
-
-  // const [isOpen, setOpen] = React.useState(false)
-  // const [isDropdownOpen, setIsDropdownOpen] = React.useState(false)
-  // const dropdownRef = React.useRef<any>(null)
-  // const mobileNavRef = React.useRef<any>(null)
-
-  // const handleBookACall = () => {
-  //   router.push('/book-a-call')
-  // }
-
-  // const openDropdown = () => {
-  //   setIsDropdownOpen(prevState => !prevState)
-  // }
-
-  // const handleClickOutside = (event: any) => {
-  //   if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-  //     setIsDropdownOpen(false)
-  //   }
-  // }
-
-  // // React.useEffect(() => {
-  // if (!isOpen) {
-  //   document.body.style.overflowY = 'scroll'
-  // } else {
-  //   document.body.style.overflowY = 'hidden'
-  // }
-  // // }, [isOpen]);
-
-  // React.useEffect(() => {
-  //   if (isDropdownOpen) {
-  //     document.addEventListener('mousedown', handleClickOutside)
-  //   } else {
-  //     document.removeEventListener('mousedown', handleClickOutside)
-  //   }
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside)
-  //   }
-  // }, [isDropdownOpen])
-
   return (
     <>
       <header>
