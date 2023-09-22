@@ -67,7 +67,6 @@
 .leader {
   @extend %label;
   display: flex;
-  // gap: var(--base);
 }
 
 .description {
@@ -127,12 +126,12 @@
 }
 
 .linkToArticle{
-  color: var(--Whitee, #FFF);
+  color:  #FFF;
   font-family: Outfit;
   font-size: 11.71px;
   font-style: normal;
   font-weight: 500;
-  line-height: 120%; /* 14.052px */
+  line-height: 120%;
   letter-spacing: -0.234px;
   border-radius: 5.855px;
   border: 0.732px solid rgba(255, 255, 255, 0.63);

@@ -17,8 +17,10 @@ const PORT = process.env.PORT || 3000
 
 const start = async (): Promise<void> => {
   await payload.init({
-    secret: process.env.PAYLOAD_SECRET || '',
-    mongoURL: process.env.MONGODB_URI || '',
+    secret: process.env.PAYLOAD_SECRET || 'a5f23618-fb28-45f4-afeb-8f13b04cb80c',
+    mongoURL:
+      process.env.MONGODB_URI ||
+      'mongodb+srv://6508c40a60c708042fa41b7e-prod:946e3b3abae8e76ed66dd9dd044691@6508c40a60c708042fa41b7.prm9hc4.mongodb.net/6508c40a60c708042fa41b7e-prod',
     express: app,
     onInit: () => {
       payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`)

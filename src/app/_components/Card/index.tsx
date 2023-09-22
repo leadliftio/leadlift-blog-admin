@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react'
+/* eslint-disable simple-import-sort/imports */
 import Link from 'next/link'
+import React, { Fragment } from 'react'
 
 import { Post, Project } from '../../../payload/payload-types'
 import { Media } from '../Media'
-
 import classes from './index.module.scss'
 
 export const Card: React.FC<{
@@ -59,7 +59,7 @@ export const Card: React.FC<{
           </div>
         )}
         <div className={classes.actionBar}>
-          <div></div>
+          {/* <div></div> */}
           <Link href={href} className={classes.linkToArticle}>
             Read article
           </Link>
