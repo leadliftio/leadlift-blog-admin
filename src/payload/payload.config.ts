@@ -1,8 +1,10 @@
+/* eslint-disable simple-import-sort/imports */
 import { payloadCloud } from '@payloadcms/plugin-cloud'
 // import formBuilder from '@payloadcms/plugin-form-builder'
 import nestedDocs from '@payloadcms/plugin-nested-docs'
 import redirects from '@payloadcms/plugin-redirects'
 import seo from '@payloadcms/plugin-seo'
+
 import type { GenerateTitle } from '@payloadcms/plugin-seo/types'
 import dotenv from 'dotenv'
 import path from 'path'
@@ -19,7 +21,7 @@ import BeforeDashboard from './components/BeforeDashboard'
 import BeforeLogin from './components/BeforeLogin'
 
 const generateTitle: GenerateTitle = () => {
-  return 'My Website'
+  return 'Leadlift Blog'
 }
 
 dotenv.config({
@@ -48,15 +50,15 @@ export default buildConfig({
   },
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
-  endpoints: [
-    // The seed endpoint is used to populate the database with some example data
-    // You should delete this endpoint before deploying your site to production
-    // {
-    //   path: '/seed',
-    //   method: 'get',
-    //   handler: seed,
-    // },
-  ],
+  // endpoints: [
+  //   // The seed endpoint is used to populate the database with some example data
+  //   // You should delete this endpoint before deploying your site to production
+  //   {
+  //     path: '/seed',
+  //     method: 'get',
+  //     handler: seed,
+  //   },
+  // ],
   plugins: [
     // formBuilder({}),
     redirects({

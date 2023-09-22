@@ -59,7 +59,6 @@ export const Card: React.FC<{
           </div>
         )}
         <div className={classes.actionBar}>
-          {/* <div></div> */}
           <Link href={href} className={classes.linkToArticle}>
             Read article
           </Link>

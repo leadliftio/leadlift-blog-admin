@@ -44,7 +44,7 @@
 
 .title {
   margin: 0;
-  color: var(--grc-neutral-20, #3D3D3D);
+  color:  #3D3D3D;
   font-family: Open Sans;
   font-size: 17.565px;
   font-style: normal;
@@ -71,7 +71,7 @@
 
 .description {
   margin: 10px 0;
-  color: var(--grc-neutral-20, #3D3D3D);
+  color:  #3D3D3D;
   font-family: "Poppins";
   font-size: 11.71px;
   font-style: normal;
@@ -99,7 +99,7 @@
 }
 
 .placeholder {
-  background-color: var(--theme-elevation-50);
+  // background-color: var(--theme-elevation-50);
   width: 100%;
   height: 100%;
   display: flex;
