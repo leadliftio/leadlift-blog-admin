@@ -52,7 +52,6 @@ export async function Footer() {
                 About Leadlift
               </Link>
             </ul>
-            {/* <div className=""></div> */}
           </div>
           <div className="social-media w-full flex items-center justify-center gap-9 mb-6">
             <Link
