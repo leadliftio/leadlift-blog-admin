@@ -24,7 +24,7 @@ export const RelatedPosts: React.FC<RelatedPostsProps> = props => {
       {introContent && (
         <Gutter className={classes.introContent}>
           {/* <RichText content={introContent} /> */}
-          <div className="">{serialize(introContent)}</div>
+          <div className={classes.introContentHeader}>{serialize(introContent)}</div>
         </Gutter>
       )}
       <Gutter>

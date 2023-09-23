@@ -1,5 +1,10 @@
 @import '../../_css/common';
 
+.relatedPosts{
+  background-color: #CCCCE5;
+  padding: 50px 150px;
+}
+
 .introContent {
   position: relative;
   margin-bottom: calc(var(--base) * 2);
@@ -8,6 +13,49 @@
     margin-bottom: var(--base);
   }
 }
+
+.introContentHeader{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h4{
+    padding:20px;
+    border-radius: 12px;
+    background: #6060AF;
+    color: var(--Whitee, #FFF);
+    font-family: var(--font-poppins);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px; /* 88.889% */
+    letter-spacing: -1.8px;
+  }
+
+  a{
+    border-radius: 8px;
+    border: 1px solid var(--Primary-Blue, #05668D);
+    background-color: #FFF;
+
+    display: flex;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+
+    color: var(--Primary-Blue, #05668D);
+    font-family: var(--font-open_sans);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 150% */
+    letter-spacing: 0.08px;
+  }
+}
+
+
 
 .grid {
   display: grid;

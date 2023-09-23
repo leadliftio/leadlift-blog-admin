@@ -58,7 +58,7 @@ export default async function Post({ params: { slug } }) {
                 type: 'h4',
                 children: [
                   {
-                    text: 'Related posts',
+                    text: 'More for you',
                   },
                 ],
               },
