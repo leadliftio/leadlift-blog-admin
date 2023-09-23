@@ -13,17 +13,17 @@ function Homepage() {
     <div>
       <div className="bg-white">
         <div className="max-w-[1200px] mx-auto lg:py-[100px] py-[24px]">
-          <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px]">
+          <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] px-[20px]">
             Latest Article
           </div>
-          <div className="w-full h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-between items-end bg-[url('https://source.unsplash.com/va9218QJFAk')] bg-cover bg-center bg-no-repeat">
+          <div className="w-full h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-between items-end bg-[url('https://source.unsplash.com/va9218QJFAk')] bg-cover bg-center bg-no-repeat p-[24px] lg:p-[48px]">
             <div>
-              <p className="lg:w-[500px] text-white font-semibold font-poppins text-[60px] leading-[120%] tracking-[3px] lg:mb-[24px]">
+              <p className="lg:w-[500px] text-white font-semibold font-poppins text-[60px] leading-[120%] tracking-[3px] lg:mb-[24px] ">
                 Landing your first job as a Data analyst: My career switch
               </p>
               <div className="flex gap-[12px]">
                 <Link
-                  className="text-white font-outfit text-base font-medium leading-[120%] tracking-[-0.32px] flex items-center gap-[4px]"
+                  className="text-white font-outfit text-base font-medium leading-[120%] tracking-[-0.32px] flex items-center gap-[4px] bg-[#50CE78] rounded-[8px] "
                   href={'#'}
                 >
                   <span>Read article</span>
@@ -46,7 +46,7 @@ function Homepage() {
                 </Link>
               </div>
             </div>
-            <p className="m-0 text-white font-outfit text-[16px] font-light leading-[120%]">
+            <p className="m-0 text-white font-outfit text-[16px] font-light leading-[120%] lg:w-[305px]">
               When choosing a vacation destination, what do you first look at? And yes, even before
               the price list and online reviews cling to lavish nature, a.....
             </p>
@@ -56,7 +56,7 @@ function Homepage() {
       <div className={classes.purpleGradientBg}>
         <div className="max-w-[1200px] mx-auto lg:py-[44px] py-[18px]">
           <div className="flex justify-between items-center lg:mb-[40px] mb-[20px]">
-            <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px]">
+            <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] px-[20px]">
               Featured Articles
             </div>
             <Link href={'#'} className={classes.seeMore}>
