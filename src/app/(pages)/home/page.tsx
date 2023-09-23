@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Metadata } from 'next'
+
+import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 
 import classes from './index.module.scss'
 
-const Homepage = () => {
+export default async function Homepage() {
   return (
     <div>
       <div className="bg-white">
@@ -66,4 +69,11 @@ const Homepage = () => {
   )
 }
 
-export default Homepage
+export const metadata: Metadata = {
+  title: 'Leadlift Blog',
+  description: 'Create an account or log in to your existing account.',
+  openGraph: mergeOpenGraph({
+    title: 'Leadlift Blog',
+    url: '/home',
+  }),
+}

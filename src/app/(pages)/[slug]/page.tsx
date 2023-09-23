@@ -11,7 +11,6 @@ import { Hero } from '../../_components/Hero'
 import { generateMeta } from '../../_utilities/generateMeta'
 import { Page } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'
-import serialize from '../../_components/RichText/serialize'
 import Homepage from '../home/page'
 
 // Payload Cloud caches all files through Cloudflare, so we don't need Next.js to cache them as well
