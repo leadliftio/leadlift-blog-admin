@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import classes from './index.module.scss'
+
 const Homepage = () => {
   return (
     <div>
@@ -9,7 +11,7 @@ const Homepage = () => {
           <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px]">
             Latest Article
           </div>
-          <div className="w-full h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-between items-end bg-[url('')] bg-cover bg-center bg-no-repeat">
+          <div className="w-full h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-between items-end bg-[url('https://source.unsplash.com/va9218QJFAk')] bg-cover bg-center bg-no-repeat">
             <div>
               <p className="lg:w-[500px] text-white font-semibold font-poppins text-[60px] leading-[120%] tracking-[3px] lg:mb-[24px]">
                 Landing your first job as a Data analyst: My career switch
@@ -43,6 +45,18 @@ const Homepage = () => {
               When choosing a vacation destination, what do you first look at? And yes, even before
               the price list and online reviews cling to lavish nature, a.....
             </p>
+          </div>
+        </div>
+      </div>
+      <div className={classes.purpleGradientBg}>
+        <div className="max-w-[1200px] mx-auto lg:py-[44px] py-[18px]">
+          <div className="flex justify-between items-center">
+            <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px]">
+              Featured Articles
+            </div>
+            <Link to={'#'} className={classes.seeMore}>
+              See more{' '}
+            </Link>
           </div>
         </div>
       </div>

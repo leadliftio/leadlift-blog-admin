@@ -1,0 +1,22 @@
+.purpleGradientBg{
+  background: linear-gradient(243deg, #CCCCE5 42.7%, rgba(255, 251, 243, 0.92) 129.28%);
+}
+
+
+.seeMore{
+  color: #50CE78;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.08px;
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #50CE78;
+  background-color: #ffffff;
+}
