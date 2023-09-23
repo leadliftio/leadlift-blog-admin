@@ -18,7 +18,7 @@ export const ContentBlock: React.FC<
 
   return (
     <Gutter className={classes.content}>
-      <div className={classes.grid}>
+      <div className={`${classes.grid} font-outfit`}>
         {columns &&
           columns.length > 0 &&
           columns.map((col, index) => {

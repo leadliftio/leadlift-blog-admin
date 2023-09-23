@@ -2,7 +2,8 @@
 
 .postHero {
   display: flex;
-  gap: calc(var(--base) * 2);
+flex-direction: column;
+  gap: 58px;
 
   @include mid-break {
     flex-direction: column;
@@ -32,6 +33,13 @@
 
 .title {
   margin: 0;
+  color: var(--main-text-1, #23282B);
+  font-family: Poppins;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 48px */
+  letter-spacing: -0.8px;
 }
 
 .warning {
@@ -59,7 +67,8 @@
   text-decoration: none;
   display: block;
   position: relative;
-  aspect-ratio: 5 / 4;
+  // aspect-ratio: 5 / 4;
+  height : 100%;
   margin-bottom: calc(var(--base) / 2);
   width: calc(100% + calc(var(--gutter-h) / 2));
 
