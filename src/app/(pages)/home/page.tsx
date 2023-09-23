@@ -33,7 +33,7 @@ async function Homepage() {
     <div>
       <div className="bg-white">
         <div className="max-w-[1200px] mx-auto lg:py-[100px] py-[24px]">
-          <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] px-[20px]">
+          <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] p-[20px] w-fit">
             Latest Article
           </div>
           <div className="w-full h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-between items-end bg-[url('https://source.unsplash.com/va9218QJFAk')] bg-cover bg-center bg-no-repeat p-[24px] lg:p-[48px]">
@@ -43,7 +43,7 @@ async function Homepage() {
               </p>
               <div className="flex gap-[12px]">
                 <Link
-                  className="text-white font-outfit text-base font-medium leading-[120%] tracking-[-0.32px] flex items-center gap-[4px] bg-[#50CE78] rounded-[8px] "
+                  className="text-white font-outfit text-base font-medium leading-[120%] tracking-[-0.32px] flex items-center gap-[4px] bg-[#50CE78] rounded-[8px] p-[16px] w-fit"
                   href={'#'}
                 >
                   <span>Read article</span>
@@ -76,7 +76,7 @@ async function Homepage() {
       <div className={classes.purpleGradientBg}>
         <div className="max-w-[1200px] mx-auto lg:py-[44px] py-[18px]">
           <div className="flex justify-between items-center lg:mb-[40px] mb-[20px]">
-            <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] px-[20px]">
+            <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] w-fit p-[20px]">
               Featured Articles
             </div>
             <Link href={'#'} className={classes.seeMore}>
