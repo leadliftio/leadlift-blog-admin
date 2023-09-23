@@ -1,14 +1,14 @@
 'use client'
 
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { Metadata } from 'next'
+import Link from 'next/link'
 
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 
 import classes from './index.module.scss'
 
-export default function Homepage() {
+function Homepage() {
   return (
     <div>
       <div className="bg-white">
@@ -24,7 +24,7 @@ export default function Homepage() {
               <div className="flex gap-[12px]">
                 <Link
                   className="text-white font-outfit text-base font-medium leading-[120%] tracking-[-0.32px] flex items-center gap-[4px]"
-                  to={'#'}
+                  href={'#'}
                 >
                   <span>Read article</span>
                   <svg
@@ -59,7 +59,7 @@ export default function Homepage() {
             <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px]">
               Featured Articles
             </div>
-            <Link to={'#'} className={classes.seeMore}>
+            <Link href={'#'} className={classes.seeMore}>
               See more{' '}
             </Link>
           </div>
@@ -70,3 +70,5 @@ export default function Homepage() {
     </div>
   )
 }
+
+export default Homepage
