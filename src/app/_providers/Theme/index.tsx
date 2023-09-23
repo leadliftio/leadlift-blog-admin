@@ -20,20 +20,18 @@ export const ThemeProvider: React.FC<{ children?: React.ReactNode }> = ({ childr
 
   const [theme, setThemeState] = useState<Theme | undefined>('light')
 
-  // const setTheme = useCallback((themeToSet: Theme | null) => {
-  //   if (themeToSet === null) {
-  //     window.localStorage.removeItem(themeLocalStorageKey)
-  //     const implicitPreference = getImplicitPreference()
-  //     document.documentElement.setAttribute('data-theme', implicitPreference || '')
-  //     if (implicitPreference) setThemeState(implicitPreference)
-  //   } else {
-  //     setThemeState(themeToSet)
-  //     window.localStorage.setItem(themeLocalStorageKey, themeToSet)
-  //     document.documentElement.setAttribute('data-theme', themeToSet)
-  //   }
-  // }, [])
-
-  const setTheme = undefined
+  const setTheme = useCallback((themeToSet: Theme | null) => {
+    if (themeToSet === null) {
+      window.localStorage.removeItem(themeLocalStorageKey)
+      const implicitPreference = getImplicitPreference()
+      document.documentElement.setAttribute('data-theme', implicitPreference || '')
+      if (implicitPreference) setThemeState(implicitPreference)
+    } else {
+      setThemeState(themeToSet)
+      window.localStorage.setItem(themeLocalStorageKey, themeToSet)
+      document.documentElement.setAttribute('data-theme', themeToSet)
+    }
+  }, [])
 
   useEffect(() => {
     let themeToSet: Theme = defaultTheme

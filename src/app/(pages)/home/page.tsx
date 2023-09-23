@@ -50,7 +50,7 @@ const Homepage = () => {
       </div>
       <div className={classes.purpleGradientBg}>
         <div className="max-w-[1200px] mx-auto lg:py-[44px] py-[18px]">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center lg:mb-[40px] mb-[20px]">
             <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px]">
               Featured Articles
             </div>
@@ -58,6 +58,8 @@ const Homepage = () => {
               See more{' '}
             </Link>
           </div>
+
+          <div className="px-[20px]"></div>
         </div>
       </div>
     </div>
