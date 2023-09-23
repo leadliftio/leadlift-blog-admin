@@ -50,7 +50,7 @@ export const ThemeProvider: React.FC<{ children?: React.ReactNode }> = ({ childr
     }
 
     document.documentElement.setAttribute('data-theme', themeToSet)
-    setThemeState(themeToSet)
+    setThemeState('light')
   }, [])
 
   return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>
