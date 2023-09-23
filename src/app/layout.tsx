@@ -7,7 +7,7 @@ import { AdminBar } from './_components/AdminBar'
 import { Footer } from './_components/Footer'
 import { Header } from './_components/Header/old-index'
 import { Providers } from './_providers'
-import { InitTheme } from './_providers/Theme/InitTheme'
+// import { InitTheme } from './_providers/Theme/InitTheme'
 import { mergeOpenGraph } from './_utilities/mergeOpenGraph'
 
 import './_css/app.scss'
@@ -32,7 +32,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <InitTheme />
+        {/* <InitTheme /> */}
         <link rel="icon" href="/favicon.ico" sizes="32x32" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
