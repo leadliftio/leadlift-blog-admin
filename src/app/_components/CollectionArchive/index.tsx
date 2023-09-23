@@ -72,15 +72,15 @@ export const CollectionArchive: React.FC<Props> = props => {
   const scrollToRef = useCallback(() => {
     const { current } = scrollRef
     if (current) {
-      // current.scrollIntoView({
-      //   behavior: 'smooth',
-      // })
+      current.scrollIntoView({
+        behavior: 'smooth',
+      })
     }
   }, [])
 
   useEffect(() => {
     if (!isLoading && typeof results.page !== 'undefined') {
-      // scrollToRef()
+      scrollToRef()
     }
   }, [isLoading, scrollToRef, results])
 
@@ -153,7 +153,7 @@ export const CollectionArchive: React.FC<Props> = props => {
   }, [page, catsFromProps, relationTo, onResultChange, sort, limit, populateBy])
 
   return (
-    <div className={[classes.collectionArchive, className].filter(Boolean).join(' ')}>
+    <div className={`${[classes.collectionArchive, className].filter(Boolean).join(' ')} bg-[]`}>
       <div ref={scrollRef} className={classes.scrollRef} />
       {!isLoading && error && <Gutter>{error}</Gutter>}
       <Fragment>
@@ -179,14 +179,14 @@ export const CollectionArchive: React.FC<Props> = props => {
               )
             })}
           </div>
-          {results.totalPages > 1 && (
-            <Pagination
-              className={classes.pagination}
-              page={results.page}
-              totalPages={results.totalPages}
-              onClick={setPage}
-            />
-          )}
+          {/* {results.totalPages > 1 && ( */}
+          <Pagination
+            className={classes.pagination}
+            page={results.page}
+            totalPages={results.totalPages}
+            onClick={setPage}
+          />
+          {/* )} */}
         </Gutter>
       </Fragment>
     </div>
