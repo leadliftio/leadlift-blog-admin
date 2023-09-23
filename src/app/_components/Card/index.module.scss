@@ -3,7 +3,7 @@
 .card  {
   border: 1px var(--theme-elevation-200) solid;
   border-radius: 16px;
-  padding:30px;
+  padding:20px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -45,7 +45,7 @@
 .title {
   margin: 0;
   color:  #3D3D3D;
-  font-family: Open Sans;
+  font-family: var(--font-open_sans);
   font-size: 17.565px;
   font-style: normal;
   font-weight: 700;
@@ -72,7 +72,7 @@
 .description {
   margin: 10px 0;
   color:  #3D3D3D;
-  font-family: "Poppins";
+  font-family: var(--font-poppins);
   font-size: 11.71px;
   font-style: normal;
   font-weight: 400;
@@ -127,7 +127,7 @@
 
 .linkToArticle{
   color:  #FFF;
-  font-family: Outfit;
+  font-family: var(--font-outfit);
   font-size: 11.71px;
   font-style: normal;
   font-weight: 500;
