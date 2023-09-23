@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Metadata } from 'next'
@@ -6,7 +8,7 @@ import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 
 import classes from './index.module.scss'
 
-export default async function Homepage() {
+export default function Homepage() {
   return (
     <div>
       <div className="bg-white">
