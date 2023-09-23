@@ -45,47 +45,10 @@ export default async function Post({ params: { slug } }) {
     <React.Fragment>
       <PostHero post={post} />
       <Blocks blocks={layout} />
-      {enablePremiumContent && <PremiumContent postSlug={slug as string} disableTopPadding />}
+      {/* {enablePremiumContent && <PremiumContent postSlug={slug as string} disableTopPadding />} */}
       <Blocks
         disableTopPadding
         blocks={[
-          {
-            blockType: 'comments',
-            blockName: 'Comments',
-            relationTo: 'posts',
-            introContent: [
-              {
-                type: 'h4',
-                children: [
-                  {
-                    text: 'Comments',
-                  },
-                ],
-              },
-              {
-                type: 'p',
-                children: [
-                  {
-                    text: 'Authenticated users can leave comments on this post. All new comments are given the status "draft" until they are approved by an admin. Draft comments are not accessible to the public and will not show up on this page until it is marked as "published". To manage all comments, ',
-                  },
-                  {
-                    type: 'link',
-                    url: '/admin/collections/comments',
-                    children: [
-                      {
-                        text: 'navigate to the admin dashboard',
-                      },
-                    ],
-                  },
-                  {
-                    text: '.',
-                  },
-                ],
-              },
-            ],
-            doc: post,
-            comments,
-          },
           {
             blockType: 'relatedPosts',
             blockName: 'Related Posts',
