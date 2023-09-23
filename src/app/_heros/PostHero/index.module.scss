@@ -34,12 +34,12 @@ flex-direction: column;
 .title {
   margin: 0;
   color: var(--main-text-1, #23282B);
-  font-family: Poppins;
   font-size: 40px;
   font-style: normal;
   font-weight: 600;
   line-height: 120%; /* 48px */
   letter-spacing: -0.8px;
+  margin-bottom: 30px;
 }
 
 .warning {

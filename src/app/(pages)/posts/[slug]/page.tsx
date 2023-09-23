@@ -63,22 +63,11 @@ export default async function Post({ params: { slug } }) {
                 ],
               },
               {
-                type: 'p',
+                type: 'link',
+                url: `/posts`,
                 children: [
                   {
-                    text: 'The posts displayed here are individually selected for this page. Admins can select any number of related posts to display here and the layout will adjust accordingly. Alternatively, you could swap this out for the "Archive" block to automatically populate posts by category complete with pagination. To manage related posts, ',
-                  },
-                  {
-                    type: 'link',
-                    url: `/admin/collections/posts/${post.id}`,
-                    children: [
-                      {
-                        text: 'navigate to the admin dashboard',
-                      },
-                    ],
-                  },
-                  {
-                    text: '.',
+                    text: 'See more',
                   },
                 ],
               },

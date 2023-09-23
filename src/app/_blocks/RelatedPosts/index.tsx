@@ -4,6 +4,7 @@ import { Post, Project } from '../../../payload/payload-types'
 import { Card } from '../../_components/Card'
 import { Gutter } from '../../_components/Gutter'
 import RichText from '../../_components/RichText'
+import serialize from '../../_components/RichText/serialize'
 
 import classes from './index.module.scss'
 
@@ -22,7 +23,8 @@ export const RelatedPosts: React.FC<RelatedPostsProps> = props => {
     <div className={classes.relatedPosts}>
       {introContent && (
         <Gutter className={classes.introContent}>
-          <RichText content={introContent} />
+          {/* <RichText content={introContent} /> */}
+          <div className="">{serialize(introContent)}</div>
         </Gutter>
       )}
       <Gutter>

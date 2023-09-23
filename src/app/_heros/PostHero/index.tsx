@@ -36,7 +36,7 @@ export const PostHero: React.FC<{
           )} */}
         </div>
         <div className={classes.content}>
-          <div className={classes.leader}>
+          {/* <div className={classes.leader}>
             <div className={classes.categories}>
               {categories?.map((category, index) => {
                 const { title: categoryTitle } = category
@@ -53,7 +53,7 @@ export const PostHero: React.FC<{
                 )
               })}
             </div>
-          </div>
+          </div> */}
           <h1 className={`${classes.title} font-poppins`}>{title}</h1>
           {/* <p className={classes.meta}>
             {populatedAuthors && (
