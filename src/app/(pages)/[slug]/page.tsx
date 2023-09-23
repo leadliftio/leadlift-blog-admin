@@ -11,6 +11,7 @@ import { Hero } from '../../_components/Hero'
 import { generateMeta } from '../../_utilities/generateMeta'
 import { Page } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'
+import HomePage from '../home/page'
 
 // Payload Cloud caches all files through Cloudflare, so we don't need Next.js to cache them as well
 // This means that we can turn off Next.js data caching and instead rely solely on the Cloudflare CDN
@@ -20,7 +21,7 @@ import { staticHome } from '../../../payload/seed/home-static'
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
 export const dynamic = 'force-dynamic'
 
-export default async function Page({ params: { slug = 'home' } }) {
+export default async function Page({ params: { slug = 'posts' } }) {
   const { isEnabled: isDraftMode } = draftMode()
 
   let page: Page | null = null
@@ -42,7 +43,8 @@ export default async function Page({ params: { slug = 'home' } }) {
   // you should delete this code once you have a home page in the CMS
   // this is really only useful for those who are demoing this template
   if (!page && slug === 'home') {
-    page = staticHome
+    // page = staticHome
+    return HomePage()
   }
 
   if (!page) {
