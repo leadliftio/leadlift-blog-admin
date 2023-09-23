@@ -24,7 +24,7 @@ export const PostHero: React.FC<{
   return (
     <Fragment>
       <Gutter className={classes.postHero}>
-        <div className={classes.content}>
+        {/* <div className={classes.content}>
           <div className={classes.leader}>
             <div className={classes.categories}>
               {categories?.map((category, index) => {
@@ -81,7 +81,7 @@ export const PostHero: React.FC<{
               {'.'}
             </p>
           </div>
-        </div>
+        </div> */}
         <div className={classes.media}>
           <div className={classes.mediaWrapper}>
             {!metaImage && <div className={classes.placeholder}>No image</div>}
@@ -89,9 +89,9 @@ export const PostHero: React.FC<{
               <Media imgClassName={classes.image} resource={metaImage} fill />
             )}
           </div>
-          {metaImage && typeof metaImage !== 'string' && metaImage?.caption && (
+          {/* {metaImage && typeof metaImage !== 'string' && metaImage?.caption && (
             <RichText content={metaImage.caption} className={classes.caption} />
-          )}
+          )} */}
         </div>
       </Gutter>
     </Fragment>

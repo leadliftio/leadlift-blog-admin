@@ -9,6 +9,14 @@
     grid-template-columns: repeat(6, 1fr);
     gap: var(--base) var(--base);
   }
+
+  color: var(--wireframe-grey-400, #494949);
+  font-family: Outfit;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 150%; /* 30px */
+  letter-spacing: 0.4px;
 }
 
 .column--oneThird {
