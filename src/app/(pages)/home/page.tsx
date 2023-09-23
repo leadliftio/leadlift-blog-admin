@@ -70,12 +70,3 @@ export default function Homepage() {
     </div>
   )
 }
-
-export const metadata: Metadata = {
-  title: 'Leadlift Blog',
-  description: 'Create an account or log in to your existing account.',
-  openGraph: mergeOpenGraph({
-    title: 'Leadlift Blog',
-    url: '/home',
-  }),
-}
