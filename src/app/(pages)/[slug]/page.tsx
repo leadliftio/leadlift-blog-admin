@@ -21,7 +21,7 @@ import Homepage from '../home/page'
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
 export const dynamic = 'force-dynamic'
 
-export default async function Page({ params: { slug = 'home' } }) {
+export default async function Page({ params: { slug = '' } }) {
   const { isEnabled: isDraftMode } = draftMode()
 
   let page: Page | null = null
