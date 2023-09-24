@@ -52,7 +52,7 @@ async function Homepage() {
             <div className="relative">
               <p className="lg:w-[500px] text-white font-semibold font-poppins text-[60px] leading-[120%] tracking-[3px] lg:mb-[24px] ">
                 {/* Landing your first job as a Data analyst: My career switch */}
-                {/* {posts?.docs[0].title} */}
+                {/* {posts?.title} */}
               </p>
               <div className="flex gap-[12px]">
                 <Link
