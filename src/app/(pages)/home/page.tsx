@@ -4,6 +4,7 @@
 import React from 'react'
 import axios from 'axios'
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 
 import { Page, Post } from '../../../payload/payload-types'
@@ -141,10 +142,15 @@ function Homepage() {
                         <div className={classes.placeholder}>No image</div>
                       )}
                       {!post?.meta?.image?.url && typeof !post?.meta?.image?.url !== 'string' && (
-                        <Media
-                          imgClassName={classes.image}
-                          resource={`https://blog.leadlift.io/media/${posts[0]?.meta?.image?.filename}`}
-                          fill
+                        // <Media
+                        //   imgClassName={classes.image}
+                        //   resource={`https://blog.leadlift.io/media/${posts[0]?.meta?.image?.filename}`}
+                        //   fill
+                        // />
+                        <Image
+                          src={`https://blog.leadlift.io/media/${posts[0]?.meta?.image?.filename}`}
+                          className="w-full h-[270px] object-cover"
+                          alt={post?.title}
                         />
                       )}
                     </Link>
@@ -164,12 +170,12 @@ function Homepage() {
                         </div>
                       )}
                       <div className={classes.actionBar}>
+                        <div className="text-white font-outfit text-[16px] font-medium  leading-[120%] tracking-[-0.32px] rounded-[8px] p-[16px] bg-[#9C9C9C]">
+                          <span className="mr-1">by</span> {posts[0]?.populatedAuthors[0]?.name}
+                        </div>
                         <Link href={`/posts/${post.slug}`} className={classes.linkToArticle}>
                           Read article
                         </Link>
-                        <div className="text-white font-outfit text-[16px] font-medium  leading-[120%] tracking-[-0.32px] rounded-[8px] p-[16px] bg-[rgba(255,255,255,0.15)]">
-                          <span className="mr-1">by</span> {posts[0]?.populatedAuthors[0]?.name}
-                        </div>
                       </div>
                     </div>
                   </div>
