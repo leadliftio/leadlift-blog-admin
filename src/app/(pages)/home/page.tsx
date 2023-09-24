@@ -10,6 +10,7 @@ import { Page, Post } from '../../../payload/payload-types'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
 import { Card } from '../../_components/Card'
+import { Media } from '../../_components/Media'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 
 import classes from './index.module.scss'
@@ -105,7 +106,7 @@ function Homepage() {
                   </svg>
                 </Link>
                 <div className="text-white font-outfit text-[16px] font-medium  leading-[120%] tracking-[-0.32px] rounded-[8px] p-[16px] bg-[rgba(255,255,255,0.15)]">
-                  by{posts[0]?.populatedAuthors[0]?.name}
+                  <span className="mr-1">by</span> {posts[0]?.populatedAuthors[0]?.name}
                 </div>
               </div>
             </div>
@@ -121,7 +122,7 @@ function Homepage() {
             <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] w-fit p-[20px]">
               Featured Articles
             </div>
-            <Link href={'#'} className={classes.seeMore}>
+            <Link href={'/posts'} className={classes.seeMore}>
               See more{' '}
             </Link>
           </div>
@@ -134,8 +135,19 @@ function Homepage() {
               {posts &&
                 posts.length > 1 &&
                 (posts.slice(1, 5) || []).map((post, i) => (
-                  <div key={i}>
-                    <Card {...post} />
+                  <div key={i} className={classes.card}>
+                    <Link href={`/posts/${post.slug}`} className={classes.mediaWrapper}>
+                      {!post?.meta?.image?.url && (
+                        <div className={classes.placeholder}>No image</div>
+                      )}
+                      {!post?.meta?.image?.url && typeof !post?.meta?.image?.url !== 'string' && (
+                        <Media
+                          imgClassName={classes.image}
+                          resource={`https://blog.leadlift.io/media/${posts[0]?.meta?.image?.filename}`}
+                          fill
+                        />
+                      )}
+                    </Link>
                   </div>
                 ))}
             </div>
