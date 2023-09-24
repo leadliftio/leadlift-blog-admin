@@ -28,17 +28,17 @@ async function Homepage() {
     // console.error(error)
   }
 
-  let posts: any
+  // let posts: any
 
-  try {
-    posts = await fetchDocs<Post>('posts')
-    // return posts?.map(({ slug }) => slug)
-  } catch (error) {
-    return []
-  }
+  // try {
+  //   posts = await fetchDocs<Post>('posts')
+  //   // return posts?.map(({ slug }) => slug)
+  // } catch (error) {
+  //   return []
+  // }
 
   // eslint-disable-next-line no-console
-  console.log(posts, page)
+  console.log(page)
 
   return (
     <div>
