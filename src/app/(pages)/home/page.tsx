@@ -1,4 +1,7 @@
+/* eslint-disable no-console */
 import React from 'react'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import Link from 'next/link'
@@ -10,8 +13,15 @@ import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 
 import classes from './index.module.scss'
 
+const fetchPosts = async () => {
+  const { data: response } = await axios.get('https://leadlift-blog.payloadcms.app/api/posts/')
+  return response
+}
+
 async function Homepage() {
   const { isEnabled: isDraftMode } = draftMode()
+
+  // const [isLoading, set]
 
   // let page: Page | null = null
   let page: any
@@ -28,17 +38,26 @@ async function Homepage() {
     // console.error(error)
   }
 
-  // let posts: any
-
-  // try {
-  //   posts = await fetchDocs<Post>('posts')
-  //   // return posts?.map(({ slug }) => slug)
-  // } catch (error) {
-  //   return []
-  // }
-
   // eslint-disable-next-line no-console
-  console.log(page)
+  console.log(page?.slug)
+
+  const getPosts = useQuery({
+    queryKey: ['posts'],
+    queryFn: async () => {
+      const data = await fetchPosts()
+      return data
+    },
+  })
+
+  if (getPosts.isFetching) {
+    return <span>Fetching...</span>
+  }
+
+  if (getPosts.isError) {
+    return <span className="font-outift text-base font-medium">Failed to fetch</span>
+  }
+
+  console.log(getPosts.data)
 
   return (
     <div>
@@ -79,9 +98,8 @@ async function Homepage() {
                 </Link>
               </div>
             </div>
-            <p className="m-0 text-white font-outfit text-[16px] font-light leading-[120%] lg:w-[305px]">
-              When choosing a vacation destination, what do you first look at? And yes, even before
-              the price list and online reviews cling to lavish nature, a.....
+            <p className=" relative m-0 text-white font-outfit text-[16px] font-light leading-[120%] lg:w-[305px]">
+              {page?.meta?.description}
             </p>
           </div>
         </div>
