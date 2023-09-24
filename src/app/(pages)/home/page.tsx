@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { Page, Post } from '../../../payload/payload-types'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { fetchDocs } from '../../_api/fetchDocs'
+import { Card } from '../../_components/Card'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 
 import classes from './index.module.scss'
@@ -70,7 +71,9 @@ function Homepage() {
           </div>
           <div
             className={`relative w-full h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-between items-end bg-cover bg-center bg-no-repeat p-[24px] lg:p-[48px]`}
-            style={{ backgroundImage: `url(${posts[0]?.meta?.image?.url})` }}
+            style={{
+              backgroundImage: `url("https://blog.leadlift.io/media/${posts[0]?.meta?.image?.filename}")`,
+            }}
           >
             <div className="absolute w-full h-full top-0 left-0 bg-[rgba(0,0,0,0.5)]  rounded-[40px]" />
             <div className="relative">
@@ -130,7 +133,11 @@ function Homepage() {
             <div className="grid grid-cols-2 lg:gap-[50px] gap-[25px]">
               {posts &&
                 posts.length > 1 &&
-                (posts.slice(1, 5) || []).map((post, i) => <div key={i}>Hi</div>)}
+                (posts.slice(1, 5) || []).map((post, i) => (
+                  <div key={i}>
+                    <Card {...post} />
+                  </div>
+                ))}
             </div>
           </div>
         </div>
