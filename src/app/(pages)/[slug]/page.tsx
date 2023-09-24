@@ -21,7 +21,7 @@ import Homepage from '../home/page'
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
 export const dynamic = 'force-dynamic'
 
-export default async function Page({ params: { slug = 'posts' } }) {
+export default async function Page({ params: { slug = '/' } }) {
   const { isEnabled: isDraftMode } = draftMode()
 
   let page: Page | null = null
@@ -42,7 +42,7 @@ export default async function Page({ params: { slug = 'posts' } }) {
   // if no `home` page exists, render a static one using dummy content
   // you should delete this code once you have a home page in the CMS
   // this is really only useful for those who are demoing this template
-  if (!page && slug === 'home') {
+  if ((!page && slug === 'home') || slug === '/') {
     // page = staticHome
     // return serialize(page)
     return Homepage()

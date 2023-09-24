@@ -43,39 +43,43 @@ export default async function Post({ params: { slug } }) {
 
   return (
     <React.Fragment>
-      <PostHero post={post} />
-      <Blocks blocks={layout} />
-      {/* {enablePremiumContent && <PremiumContent postSlug={slug as string} disableTopPadding />} */}
-      <Blocks
-        disableTopPadding
-        blocks={[
-          {
-            blockType: 'relatedPosts',
-            blockName: 'Related Posts',
-            relationTo: 'posts',
-            introContent: [
+      <div className="mt-[100px] max-w-[1200px] mx-auto">
+        <div className="w-[70%]">
+          <PostHero post={post} />
+          <Blocks blocks={layout} />
+          {/* {enablePremiumContent && <PremiumContent postSlug={slug as string} disableTopPadding />} */}
+          <Blocks
+            disableTopPadding
+            blocks={[
               {
-                type: 'h4',
-                children: [
+                blockType: 'relatedPosts',
+                blockName: 'Related Posts',
+                relationTo: 'posts',
+                introContent: [
                   {
-                    text: 'More for you',
+                    type: 'h4',
+                    children: [
+                      {
+                        text: 'More for you',
+                      },
+                    ],
+                  },
+                  {
+                    type: 'link',
+                    url: `/posts`,
+                    children: [
+                      {
+                        text: 'See more',
+                      },
+                    ],
                   },
                 ],
+                docs: relatedPosts,
               },
-              {
-                type: 'link',
-                url: `/posts`,
-                children: [
-                  {
-                    text: 'See more',
-                  },
-                ],
-              },
-            ],
-            docs: relatedPosts,
-          },
-        ]}
-      />
+            ]}
+          />
+        </div>
+      </div>
     </React.Fragment>
   )
 }
