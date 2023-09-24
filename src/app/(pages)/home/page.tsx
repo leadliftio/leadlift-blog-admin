@@ -18,7 +18,12 @@ const fetchPosts = async () => {
   return response
 }
 
-async function Homepage() {
+export async function getStaticProps() {
+  const posts = await fetchPosts()
+  return { props: { posts } }
+}
+
+async function Homepage(props) {
   const { isEnabled: isDraftMode } = draftMode()
 
   // const [isLoading, set]
@@ -43,10 +48,8 @@ async function Homepage() {
 
   const getPosts = useQuery({
     queryKey: ['posts'],
-    queryFn: async () => {
-      const data = await fetchPosts()
-      return data
-    },
+    queryFn: fetchPosts,
+    initialData: props.posts,
   })
 
   if (getPosts.isFetching) {
