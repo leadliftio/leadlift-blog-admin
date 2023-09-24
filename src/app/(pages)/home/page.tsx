@@ -39,7 +39,7 @@ function Homepage() {
   React.useEffect(() => {
     setIsLoading(true)
     axios
-      .get('https://leadlift-blog.payloadcms.app/api/posts/')
+      .get('https://blog.leadlift.io/api/posts/')
       .then(res => {
         console.log(res)
         setPosts(res.data?.docs)
