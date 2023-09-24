@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import React from 'react'
-import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
@@ -13,20 +12,12 @@ import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 
 import classes from './index.module.scss'
 
-const fetchPosts = async () => {
-  const { data: response } = await axios.get('https://leadlift-blog.payloadcms.app/api/posts/')
-  return response
-}
-
-export async function getStaticProps() {
-  const posts = await fetchPosts()
-  return { props: { posts } }
-}
-
-async function Homepage(props) {
+async function Homepage() {
   const { isEnabled: isDraftMode } = draftMode()
 
-  // const [isLoading, set]
+  const [isLoading, setIsLoading] = React.useState(false)
+  const [posts, setPosts] = React.useState([])
+  const [isError, setIsError] = React.useState(false)
 
   // let page: Page | null = null
   let page: any
@@ -46,21 +37,29 @@ async function Homepage(props) {
   // eslint-disable-next-line no-console
   console.log(page?.slug)
 
-  const getPosts = useQuery({
-    queryKey: ['posts'],
-    queryFn: fetchPosts,
-    initialData: props.posts,
-  })
+  React.useEffect(() => {
+    setIsLoading(true)
+    axios
+      .get('https://leadlift-blog.payloadcms.app/api/posts/')
+      .then(res => {
+        setPosts(res.data?.docs)
+        setIsLoading(false)
+      })
+      .catch(err => {
+        setIsLoading(false)
+        setIsError(true)
+      })
+  }, [])
 
-  if (getPosts.isFetching) {
+  if (isLoading) {
     return <span>Fetching...</span>
   }
 
-  if (getPosts.isError) {
+  if (isError) {
     return <span className="font-outift text-base font-medium">Failed to fetch</span>
   }
 
-  console.log(getPosts.data)
+  console.log(posts)
 
   return (
     <div>
