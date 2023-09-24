@@ -67,19 +67,19 @@ function Homepage() {
   return (
     <div>
       <div className="bg-white">
-        <div className="max-w-[1200px] mx-auto lg:py-[100px] py-[24px]">
-          <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] p-[20px] w-fit">
+        <div className="max-w-[1200px] mx-auto lg:py-[100px] py-[50px] px-[20px] lg:px-0">
+          <div className="mb-[40px] text-white font-poppins text-[21px] lg:text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] p-[20px] w-fit">
             Latest Article
           </div>
           <div
-            className={`relative w-full h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-between items-end bg-cover bg-center bg-no-repeat p-[24px] lg:p-[48px]`}
+            className={`relative w-full h-[400px] lg:h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-end lg:justify-between items-start lg:items-end gap-[40px] lg:gap-0  bg-cover bg-center bg-no-repeat p-[24px] lg:p-[48px]`}
             style={{
               backgroundImage: `url("https://blog.leadlift.io/media/${posts[0]?.meta?.image?.filename}")`,
             }}
           >
             <div className="absolute w-full h-full top-0 left-0 bg-[rgba(0,0,0,0.5)]  rounded-[40px]" />
             <div className="relative">
-              <p className="lg:w-[500px] text-white font-semibold font-poppins text-[60px] leading-[120%] tracking-[3px] lg:mb-[24px] ">
+              <p className="lg:w-[500px] w-full text-white font-semibold font-poppins text-[60px] leading-[120%] tracking-[3px] lg:mb-[24px] ">
                 {/* Landing your first job as a Data analyst: My career switch */}
                 {posts[0]?.title}
               </p>
@@ -111,16 +111,16 @@ function Homepage() {
                 </div>
               </div>
             </div>
-            <p className=" relative m-0 text-white font-outfit text-[16px] font-light leading-[120%] lg:w-[305px]">
+            <p className=" relative m-0 text-white font-outfit text-[16px] font-light leading-[120%] lg:w-[305px] w-full">
               {posts[0]?.meta?.description}
             </p>
           </div>
         </div>
       </div>
       <div className={classes.purpleGradientBg}>
-        <div className="max-w-[1200px] mx-auto lg:py-[44px] py-[18px]">
+        <div className="max-w-[1200px] mx-auto lg:py-[44px] py-[32px] px-[20px]">
           <div className="flex justify-between items-center lg:mb-[40px] mb-[20px]">
-            <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] w-fit p-[20px]">
+            <div className="text-white font-poppins text-[21px] lg:text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] w-fit p-[20px]">
               Featured Articles
             </div>
             <Link href={'/posts'} className={classes.seeMore}>
@@ -153,7 +153,7 @@ function Homepage() {
           </div>
 
           <div className="px-[20px] lg:px-[40px]">
-            <div className="grid grid-cols-2 lg:gap-[50px] gap-[25px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-[50px] gap-[25px]">
               {posts &&
                 posts.length > 1 &&
                 (posts.slice(1, 5) || []).map((post, i) => (
