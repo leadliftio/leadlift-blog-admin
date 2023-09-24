@@ -38,7 +38,7 @@ async function Homepage() {
   }
 
   // eslint-disable-next-line no-console
-  console.log(posts)
+  console.log(posts, page)
 
   return (
     <div>
