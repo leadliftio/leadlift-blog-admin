@@ -69,7 +69,8 @@ function Homepage() {
             Latest Article
           </div>
           <div
-            className={`relative w-full h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-between items-end bg-[url('${posts[0]?.meta?.image?.url}')] bg-cover bg-center bg-no-repeat p-[24px] lg:p-[48px]`}
+            className={`relative w-full h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-between items-end bg-cover bg-center bg-no-repeat p-[24px] lg:p-[48px]`}
+            style={{ backgroundImage: `url(${posts[0]?.meta?.image?.url})` }}
           >
             <div className="absolute w-full h-full top-0 left-0 bg-[rgba(0,0,0,0.5)]  rounded-[40px]" />
             <div className="relative">
@@ -122,7 +123,11 @@ function Homepage() {
             </Link>
           </div>
 
-          <div className="px-[20px]"></div>
+          <div className="px-[20px]">
+            {/* {posts && posts.length > 1 && (
+
+            )} */}
+          </div>
         </div>
       </div>
     </div>
