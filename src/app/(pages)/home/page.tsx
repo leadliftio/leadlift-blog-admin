@@ -125,13 +125,34 @@ function Homepage() {
             </div>
             <Link href={'/posts'} className={classes.seeMore}>
               See more{' '}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <path
+                  d="M14.4297 5.92969L20.4997 11.9997L14.4297 18.0697"
+                  stroke="#50CE78"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M3.5 12H20.33"
+                  stroke="#50CE78"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </Link>
           </div>
 
-          <div className="px-[20px]">
-            {/* {posts && posts.length > 1 && (
-
-            )} */}
+          <div className="px-[20px] lg:px-[40px]">
             <div className="grid grid-cols-2 lg:gap-[50px] gap-[25px]">
               {posts &&
                 posts.length > 1 &&
@@ -141,7 +162,7 @@ function Homepage() {
                       {!post?.meta?.image?.url && (
                         <div className={classes.placeholder}>No image</div>
                       )}
-                      {!post?.meta?.image?.url && typeof !post?.meta?.image?.url !== 'string' && (
+                      {post?.meta?.image?.url && (
                         // <Media
                         //   imgClassName={classes.image}
                         //   resource={`https://blog.leadlift.io/media/${posts[0]?.meta?.image?.filename}`}
@@ -149,7 +170,7 @@ function Homepage() {
                         // />
                         <Image
                           src={`https://blog.leadlift.io/media/${posts[0]?.meta?.image?.filename}`}
-                          className="w-full h-[270px] object-cover"
+                          className="w-full h-[270px] object-cover rounded-[12px] lg:rounded-[17px]"
                           alt={post?.title}
                         />
                       )}
@@ -175,6 +196,22 @@ function Homepage() {
                         </div>
                         <Link href={`/posts/${post.slug}`} className={classes.linkToArticle}>
                           Read article
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="23"
+                            height="24"
+                            viewBox="0 0 23 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M15.6737 14.0686C15.5842 14.1582 15.4616 14.2147 15.3202 14.2147C15.0468 14.2147 14.8205 13.9885 14.8205 13.715L14.8205 8.49188L9.59733 8.49188C9.32391 8.49188 9.09764 8.2656 9.09764 7.99219C9.09764 7.71877 9.32391 7.4925 9.59733 7.4925L15.3202 7.4925C15.5936 7.4925 15.8199 7.71877 15.8199 7.99219L15.8199 13.715C15.8199 13.8565 15.7633 13.979 15.6737 14.0686Z"
+                              fill="white"
+                            />
+                            <path
+                              d="M15.594 8.42763L7.66027 16.3614C7.46699 16.5546 7.14644 16.5546 6.95316 16.3614C6.75989 16.1681 6.75989 15.8475 6.95316 15.6543L14.8869 7.72052C15.0802 7.52724 15.4007 7.52725 15.594 7.72052C15.7873 7.9138 15.7873 8.23435 15.594 8.42763Z"
+                              fill="white"
+                            />
+                          </svg>
                         </Link>
                       </div>
                     </div>
