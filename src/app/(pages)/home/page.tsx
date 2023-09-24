@@ -81,7 +81,7 @@ function Homepage() {
               <div className="flex gap-[12px]">
                 <Link
                   className="text-white font-outfit text-base font-medium leading-[120%] tracking-[-0.32px] flex items-center gap-[4px] bg-[#50CE78] rounded-[8px] p-[16px] w-fit"
-                  href={`/posts/${posts[0].slug}`}
+                  href={`/posts/${posts[0]?.slug}`}
                 >
                   <span>Read article</span>
                   <svg
@@ -127,6 +127,11 @@ function Homepage() {
             {/* {posts && posts.length > 1 && (
 
             )} */}
+            <div className="grid grid-cols-2 lg:gap-[50px] gap-[25px]">
+              {posts &&
+                posts.length > 1 &&
+                (posts.slice(1, 5) || []).map((post, i) => <div key={i}>Hi</div>)}
+            </div>
           </div>
         </div>
       </div>
