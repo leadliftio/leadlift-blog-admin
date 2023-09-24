@@ -41,6 +41,7 @@ function Homepage() {
     axios
       .get('https://leadlift-blog.payloadcms.app/api/posts/')
       .then(res => {
+        console.log(res)
         setPosts(res.data?.docs)
         setIsLoading(false)
       })
