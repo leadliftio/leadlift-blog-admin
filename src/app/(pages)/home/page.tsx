@@ -1,3 +1,5 @@
+'use client'
+
 /* eslint-disable no-console */
 import React from 'react'
 import axios from 'axios'
@@ -12,7 +14,7 @@ import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 
 import classes from './index.module.scss'
 
-async function Homepage() {
+function Homepage() {
   const { isEnabled: isDraftMode } = draftMode()
 
   const [isLoading, setIsLoading] = React.useState(false)
@@ -22,17 +24,17 @@ async function Homepage() {
   // let page: Page | null = null
   let page: any
 
-  try {
-    page = await fetchDoc<Page>({
-      collection: 'posts',
-      draft: isDraftMode,
-    })
-  } catch (error) {
-    // when deploying this template on Payload Cloud, this page needs to build before the APIs are live
-    // so swallow the error here and simply render the page with fallback data where necessary
-    // in production you may want to redirect to a 404  page or at least log the error somewhere
-    // console.error(error)
-  }
+  // try {
+  //   page = await fetchDoc<Page>({
+  //     collection: 'posts',
+  //     draft: isDraftMode,
+  //   })
+  // } catch (error) {
+  //   // when deploying this template on Payload Cloud, this page needs to build before the APIs are live
+  //   // so swallow the error here and simply render the page with fallback data where necessary
+  //   // in production you may want to redirect to a 404  page or at least log the error somewhere
+  //   // console.error(error)
+  // }
 
   // eslint-disable-next-line no-console
   console.log(page?.slug)
