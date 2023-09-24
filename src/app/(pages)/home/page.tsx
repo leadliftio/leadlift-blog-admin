@@ -3,8 +3,9 @@ import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import Link from 'next/link'
 
-import { Page } from '../../../payload/payload-types'
+import { Page, Post } from '../../../payload/payload-types'
 import { fetchDoc } from '../../_api/fetchDoc'
+import { fetchDocs } from '../../_api/fetchDocs'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 
 import classes from './index.module.scss'
@@ -27,8 +28,17 @@ async function Homepage() {
     // console.error(error)
   }
 
+  let posts: any
+
+  try {
+    posts = await fetchDocs<Post>('posts')
+    // return posts?.map(({ slug }) => slug)
+  } catch (error) {
+    return []
+  }
+
   // eslint-disable-next-line no-console
-  console.log(page)
+  console.log(posts)
 
   return (
     <div>
@@ -42,7 +52,7 @@ async function Homepage() {
             <div className="relative">
               <p className="lg:w-[500px] text-white font-semibold font-poppins text-[60px] leading-[120%] tracking-[3px] lg:mb-[24px] ">
                 {/* Landing your first job as a Data analyst: My career switch */}
-                {/* {page?.docs[0].title} */}
+                {posts?.docs[0].title}
               </p>
               <div className="flex gap-[12px]">
                 <Link
