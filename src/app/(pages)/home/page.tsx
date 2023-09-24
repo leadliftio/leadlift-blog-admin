@@ -4,7 +4,6 @@
 import React from 'react'
 import axios from 'axios'
 import { Metadata } from 'next'
-import { draftMode } from 'next/headers'
 import Link from 'next/link'
 
 import { Page, Post } from '../../../payload/payload-types'
@@ -15,8 +14,6 @@ import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
 import classes from './index.module.scss'
 
 function Homepage() {
-  const { isEnabled: isDraftMode } = draftMode()
-
   const [isLoading, setIsLoading] = React.useState(false)
   const [posts, setPosts] = React.useState([])
   const [isError, setIsError] = React.useState(false)
