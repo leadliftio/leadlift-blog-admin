@@ -12,7 +12,8 @@ import classes from './index.module.scss'
 async function Homepage() {
   const { isEnabled: isDraftMode } = draftMode()
 
-  let page: Page | null = null
+  // let page: Page | null = null
+  let page: any
 
   try {
     page = await fetchDoc<Page>({
@@ -36,11 +37,12 @@ async function Homepage() {
           <div className="mb-[40px] text-white font-poppins text-[30px] font-semibold tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] p-[20px] w-fit">
             Latest Article
           </div>
-          <div className="relative w-full h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-between items-end bg-[url('https://source.unsplash.com/va9218QJFAk')] bg-cover bg-center bg-no-repeat p-[24px] lg:p-[48px]">
-            <div className="absolute w-full h-full top-0 left-0 bg-[rgba(0,0,0,0.5)]" />
+          <div className="relative w-full h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-between items-end bg-[url('')] bg-cover bg-center bg-no-repeat p-[24px] lg:p-[48px]">
+            <div className="absolute w-full h-full top-0 left-0 bg-[rgba(0,0,0,0.5)]  rounded-[40px]" />
             <div className="relative">
               <p className="lg:w-[500px] text-white font-semibold font-poppins text-[60px] leading-[120%] tracking-[3px] lg:mb-[24px] ">
-                Landing your first job as a Data analyst: My career switch
+                {/* Landing your first job as a Data analyst: My career switch */}
+                {page?.docs[0].title}
               </p>
               <div className="flex gap-[12px]">
                 <Link
