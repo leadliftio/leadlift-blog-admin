@@ -1,6 +1,7 @@
 @import '../../_css/common';
 
 .collectionArchive{
+  padding-top: 40px;
 background: linear-gradient(246deg, #CCCCE5 44.92%, rgba(255, 251, 243, 0.92) 129.19%);
 }
 
@@ -50,6 +51,8 @@ background: linear-gradient(246deg, #CCCCE5 44.92%, rgba(255, 251, 243, 0.92) 12
   width: 100%;
   // gap: var(--base) 40px;
   gap: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
 
   @include mid-break {
     grid-template-columns: repeat(6, 1fr);

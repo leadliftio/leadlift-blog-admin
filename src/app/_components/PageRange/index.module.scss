@@ -4,6 +4,16 @@
   display: flex;
   align-items: center;
   font-weight: 600;
+  color: var(--Whitee, #FFF);
+  font-family: var(--font-poppins);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px; /* 88.889% */
+  letter-spacing: -1.8px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  background: #6060AF;
 }
 
 .content {
