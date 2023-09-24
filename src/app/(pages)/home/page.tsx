@@ -148,6 +148,30 @@ function Homepage() {
                         />
                       )}
                     </Link>
+                    <div className={classes.content}>
+                      {post?.title && (
+                        <h4 className={classes.title}>
+                          <Link href={`/posts/${post.slug}`} className={classes.titleLink}>
+                            {post?.title}
+                          </Link>
+                        </h4>
+                      )}
+                      {post?.meta?.description && (
+                        <div className={classes.body}>
+                          {post?.meta?.description && (
+                            <p className={classes.description}>{post?.meta?.description}</p>
+                          )}
+                        </div>
+                      )}
+                      <div className={classes.actionBar}>
+                        <Link href={`/posts/${post.slug}`} className={classes.linkToArticle}>
+                          Read article
+                        </Link>
+                        <div className="text-white font-outfit text-[16px] font-medium  leading-[120%] tracking-[-0.32px] rounded-[8px] p-[16px] bg-[rgba(255,255,255,0.15)]">
+                          <span className="mr-1">by</span> {posts[0]?.populatedAuthors[0]?.name}
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 ))}
             </div>
