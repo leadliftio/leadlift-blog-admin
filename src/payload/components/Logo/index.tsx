@@ -2,8 +2,6 @@
 import Image from 'next/image'
 import React from 'react'
 
-import logo from './brandlogo.png'
-
 const LeadliftLogo = () => {
   return (
     <div>
