@@ -54,20 +54,30 @@ export function Header() {
 
   // React.useEffect(() => {
   if (!isOpen) {
-    window.document.body.style.overflowY = 'scroll'
+    if (typeof window !== 'undefined') {
+      document.body.style.overflowY = 'scroll'
+    }
   } else {
-    document.body.style.overflowY = 'hidden'
+    if (typeof window !== 'undefined') {
+      document.body.style.overflowY = 'hidden'
+    }
   }
   // }, [isOpen]);
 
   React.useEffect(() => {
     if (isDropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
+      if (typeof window !== 'undefined') {
+        document.addEventListener('mousedown', handleClickOutside)
+      }
     } else {
-      document.removeEventListener('mousedown', handleClickOutside)
+      if (typeof window !== 'undefined') {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
     }
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
+      if (typeof window !== 'undefined') {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
     }
   }, [isDropdownOpen])
 
