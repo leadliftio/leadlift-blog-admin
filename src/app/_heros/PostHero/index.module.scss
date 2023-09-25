@@ -63,6 +63,7 @@ flex-direction: column;
     width: 100%;
     height: 200px;
     margin-bottom: 20px;
+    padding: 20px;
   }
 }
 
@@ -84,6 +85,10 @@ flex-direction: column;
 .image {
   object-fit: cover;
   border-radius: 30px;
+    @include mid-break {
+        border-radius: 20px;
+
+    }
 }
 
 .placeholder {
