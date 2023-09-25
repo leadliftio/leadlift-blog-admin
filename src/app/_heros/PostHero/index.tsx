@@ -23,20 +23,20 @@ export const PostHero: React.FC<{
 
   return (
     <Fragment>
-      <Gutter className={classes.postHero}>
-        <div className={classes.media}>
-          <div className={classes.mediaWrapper}>
-            {!metaImage && <div className={classes.placeholder}>No image</div>}
-            {metaImage && typeof metaImage !== 'string' && (
-              <Media imgClassName={classes.image} resource={metaImage} fill />
-            )}
-          </div>
-          {/* {metaImage && typeof metaImage !== 'string' && metaImage?.caption && (
+      {/* <Gutter className={classes.postHero}> */}
+      <div className={classes.media}>
+        <div className={classes.mediaWrapper}>
+          {!metaImage && <div className={classes.placeholder}>No image</div>}
+          {metaImage && typeof metaImage !== 'string' && (
+            <Media imgClassName={classes.image} resource={metaImage} fill />
+          )}
+        </div>
+        {/* {metaImage && typeof metaImage !== 'string' && metaImage?.caption && (
             <RichText content={metaImage.caption} className={classes.caption} />
           )} */}
-        </div>
-        <div className={classes.content}>
-          {/* <div className={classes.leader}>
+      </div>
+      <div className={classes.content}>
+        {/* <div className={classes.leader}>
             <div className={classes.categories}>
               {categories?.map((category, index) => {
                 const { title: categoryTitle } = category
@@ -54,8 +54,8 @@ export const PostHero: React.FC<{
               })}
             </div>
           </div> */}
-          <h1 className={`${classes.title} font-poppins`}>{title}</h1>
-          {/* <p className={classes.meta}>
+        <h1 className={`${classes.title} font-poppins`}>{title}</h1>
+        {/* <p className={classes.meta}>
             {populatedAuthors && (
               <Fragment>
                 {'By '}
@@ -92,8 +92,8 @@ export const PostHero: React.FC<{
               {'.'}
             </p>
           </div> */}
-        </div>
-      </Gutter>
+      </div>
+      {/* </Gutter> */}
     </Fragment>
   )
 }
