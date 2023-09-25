@@ -54,7 +54,7 @@ export function Header() {
 
   // React.useEffect(() => {
   if (!isOpen) {
-    document.body.style.overflowY = 'scroll'
+    window.document.body.style.overflowY = 'scroll'
   } else {
     document.body.style.overflowY = 'hidden'
   }
