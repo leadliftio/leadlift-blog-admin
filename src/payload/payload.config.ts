@@ -1,8 +1,10 @@
+/* eslint-disable simple-import-sort/imports */
 import { payloadCloud } from '@payloadcms/plugin-cloud'
 // import formBuilder from '@payloadcms/plugin-form-builder'
 import nestedDocs from '@payloadcms/plugin-nested-docs'
 import redirects from '@payloadcms/plugin-redirects'
 import seo from '@payloadcms/plugin-seo'
+
 import type { GenerateTitle } from '@payloadcms/plugin-seo/types'
 import dotenv from 'dotenv'
 import path from 'path'
@@ -15,8 +17,9 @@ import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
 import { Projects } from './collections/Projects'
 import Users from './collections/Users'
-import BeforeDashboard from './components/BeforeDashboard'
-import BeforeLogin from './components/BeforeLogin'
+import LeadliftLogo from './components/Logo'
+// import BeforeDashboard from './components/BeforeDashboard'
+// import BeforeLogin from './components/BeforeLogin'
 
 const generateTitle: GenerateTitle = () => {
   return 'Leadlift Blog'
@@ -32,10 +35,14 @@ export default buildConfig({
     components: {
       // The `BeforeLogin` component renders a message that you see while logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below and the import `BeforeLogin` statement on line 15.
-      beforeLogin: [BeforeLogin],
+      // beforeLogin: [BeforeLogin],
       // The `BeforeDashboard` component renders the 'welcome' block that you see after logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below and the import `BeforeDashboard` statement on line 15.
-      beforeDashboard: [BeforeDashboard],
+      // beforeDashboard: [BeforeDashboard],
+      graphics: {
+        Icon: LeadliftLogo,
+        Logo: LeadliftLogo,
+      },
     },
   },
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
