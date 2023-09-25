@@ -154,43 +154,41 @@ export const CollectionArchive: React.FC<Props> = props => {
   }, [page, catsFromProps, relationTo, onResultChange, sort, limit, populateBy])
 
   return (
-    <div
-      className={`${[classes.collectionArchive, className]
-        .filter(Boolean)
-        .join(' ')} max-w-[1200px] mx-auto`}
-    >
-      <div ref={scrollRef} className={classes.scrollRef} />
-      {!isLoading && error && <Gutter>{error}</Gutter>}
-      <Fragment>
-        {showPageRange !== false && (
-          <div className={classes.pageRange}>
-            <PageRange
-              totalDocs={results.totalDocs}
-              currentPage={results.page}
-              collection={relationTo}
-              limit={limit}
-            />
-          </div>
-        )}
+    <div className={`${[classes.collectionArchive, className].filter(Boolean).join(' ')} `}>
+      <div className="max-w-[1200px] mx-auto px-[20px] lg:px-0">
+        <div ref={scrollRef} className={classes.scrollRef} />
+        {!isLoading && error && <Gutter>{error}</Gutter>}
+        <Fragment>
+          {showPageRange !== false && (
+            <div className={classes.pageRange}>
+              <PageRange
+                totalDocs={results.totalDocs}
+                currentPage={results.page}
+                collection={relationTo}
+                limit={limit}
+              />
+            </div>
+          )}
 
-        <div className={classes.grid}>
-          {results.docs?.map((result, index) => {
-            return (
-              <div key={index} className={classes.column}>
-                <Card relationTo={relationTo} doc={result} showCategories />
-              </div>
-            )
-          })}
-        </div>
-        {/* {results.totalPages > 1 && ( */}
-        <Pagination
-          className={classes.pagination}
-          page={results.page}
-          totalPages={results.totalPages}
-          onClick={setPage}
-        />
-        {/* )} */}
-      </Fragment>
+          <div className={classes.grid}>
+            {results.docs?.map((result, index) => {
+              return (
+                <div key={index} className={classes.column}>
+                  <Card relationTo={relationTo} doc={result} showCategories />
+                </div>
+              )
+            })}
+          </div>
+          {/* {results.totalPages > 1 && ( */}
+          <Pagination
+            className={classes.pagination}
+            page={results.page}
+            totalPages={results.totalPages}
+            onClick={setPage}
+          />
+          {/* )} */}
+        </Fragment>
+      </div>
     </div>
   )
 }
