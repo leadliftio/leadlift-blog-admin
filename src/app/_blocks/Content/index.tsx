@@ -17,21 +17,21 @@ export const ContentBlock: React.FC<
   const { columns } = props
 
   return (
-    <Gutter className={classes.content}>
-      <div className={`${classes.grid} font-outfit`}>
-        {columns &&
-          columns.length > 0 &&
-          columns.map((col, index) => {
-            const { enableLink, richText, link, size } = col
+    // <Gutter className={classes.content}>
+    <div className={`${classes.grid} font-outfit`}>
+      {columns &&
+        columns.length > 0 &&
+        columns.map((col, index) => {
+          const { enableLink, richText, link, size } = col
 
-            return (
-              <div key={index} className={[classes.column, classes[`column--${size}`]].join(' ')}>
-                <RichText content={richText} />
-                {enableLink && <CMSLink className={classes.link} {...link} />}
-              </div>
-            )
-          })}
-      </div>
-    </Gutter>
+          return (
+            <div key={index} className={[classes.column, classes[`column--${size}`]].join(' ')}>
+              <RichText content={richText} />
+              {enableLink && <CMSLink className={classes.link} {...link} />}
+            </div>
+          )
+        })}
+    </div>
+    // </Gutter>
   )
 }
