@@ -20,17 +20,56 @@ import MenuIcon from './menu@2x.svg'
 // import { HeaderNav } from './Nav'
 import classes from './index.module.scss'
 
-export async function Header() {
+export function Header() {
+  const router = useRouter()
   let header: Header | null = null
 
-  try {
-    header = await fetchHeader()
-  } catch (error) {
-    // When deploying this template on Payload Cloud, this page needs to build before the APIs are live
-    // So swallow the error here and simply render the header without nav items if one occurs
-    // in production you may want to redirect to a 404  page or at least log the error somewhere
-    // console.error(error)
+  // try {
+  //   header = await fetchHeader()
+  // } catch (error) {
+  //   // When deploying this template on Payload Cloud, this page needs to build before the APIs are live
+  //   // So swallow the error here and simply render the header without nav items if one occurs
+  //   // in production you may want to redirect to a 404  page or at least log the error somewhere
+  //   // console.error(error)
+  // }
+
+  const [isOpen, setOpen] = React.useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = React.useState(false)
+  const dropdownRef = React.useRef<any>(null)
+  const mobileNavRef = React.useRef<any>(null)
+
+  const handleBookACall = () => {
+    router.push('/book-a-call')
   }
+
+  const openDropdown = () => {
+    setIsDropdownOpen(prevState => !prevState)
+  }
+
+  const handleClickOutside = (event: any) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsDropdownOpen(false)
+    }
+  }
+
+  // React.useEffect(() => {
+  if (!isOpen) {
+    document.body.style.overflowY = 'scroll'
+  } else {
+    document.body.style.overflowY = 'hidden'
+  }
+  // }, [isOpen]);
+
+  React.useEffect(() => {
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isDropdownOpen])
 
   return (
     <>
@@ -45,7 +84,7 @@ export async function Header() {
 
                 <div className="hidden nav-items lg:flex items-center gap-8">
                   <div className="text-brandBlack font-normal font-openSans text-[20px] flex items-center gap-[6px] group relative">
-                    <Link href="/our-services">Services</Link>
+                    <Link href="https://leadlift.io/services">Services</Link>
                     <div className="cursor-pointer" onClick={undefined}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -71,21 +110,29 @@ export async function Header() {
                     >
                       {/* Dropdown */}
                       <div className=" flex flex-col gap-[6px] text-brandBlack font-openSans text-[14px] font-normal">
-                        <a href="/our-services/#social-media-management">Social media management</a>
-                        <a href="/our-services/#content-creation">Content creation</a>
-                        <a href="/our-services/#content-strategy">Content strategy</a>
-                        <a href="/our-services/#community-management">Community management</a>
+                        <a href="https://leadlift.io/our-services/#social-media-management">
+                          Social media management
+                        </a>
+                        <a href="https://leadlift.io/our-services/#social-media-management">
+                          Content creation
+                        </a>
+                        <a href="https://leadlift.io/our-services/#social-media-management">
+                          Content strategy
+                        </a>
+                        <a href="https://leadlift.io/our-services/#social-media-management">
+                          Community management
+                        </a>
                       </div>
                     </div>
                   </div>
                   <Link
-                    href="/pricing"
+                    href="https://leadlift.io/pricing"
                     className="text-brandBlack font-normal font-openSans text-[20px]"
                   >
                     Pricing
                   </Link>
                   <Link
-                    href="https://blog.leadlift.io/posts"
+                    href="https://blog.leadlift.io/"
                     className="text-brandBlack font-normal font-openSans text-[20px]"
                   >
                     Blog
