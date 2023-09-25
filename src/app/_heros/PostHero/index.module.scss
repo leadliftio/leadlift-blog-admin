@@ -57,10 +57,12 @@ flex-direction: column;
 .media {
   width: 100%;
   height:360px;
+  margin-bottom: 30px;
 
   @include mid-break {
     width: 100%;
     height: 200px;
+    margin-bottom: 20px;
   }
 }
 
