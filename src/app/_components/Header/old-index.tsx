@@ -168,7 +168,7 @@ export function Header() {
                 size={24}
                 rounded
               /> */}
-                  {isOpen ? (
+                  {!isOpen ? (
                     // <img src={MenuIcon} alt="" />
                     <svg
                       width="32"
@@ -217,7 +217,7 @@ export function Header() {
           </nav>
           {/* <div className="w-screen h-screen overflow-hidden"> */}
           <div
-            className={`w-full bg-[#EDF0F8] h-[550px] rounded-[25px] px-[16px] py-[24px] fixed z-[8080] flex flex-col divide-y-2 shadow-card transition-all duration-500 ${
+            className={`w-full bg-[#EDF0F8] h-[600px] rounded-[25px] px-[16px] py-[24px] fixed z-[8080] flex flex-col divide-y-2 shadow-card transition-all duration-500 ${
               isOpen ? 'translate-y-[0]' : 'translate-y-[-550px] z-[8500]'
             }`}
             ref={mobileNavRef}
@@ -248,7 +248,7 @@ export function Header() {
                 </Link>
                 <Link
                   href="https://blog.leadlift.io"
-                  className="text-brandBlack font-medium font-outfit text-[24px]"
+                  className="pb-[20px] border-b border-solid border-[#D9D9D9]"
                   onClick={() => setOpen(false)}
                 >
                   Blog
