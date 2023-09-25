@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 
-import logo from './brandLogo.svg'
+import logo from './brandlogo.png'
 
 const LeadliftLogo = () => {
   return (
