@@ -43,10 +43,14 @@ export default async function Post({ params: { slug } }) {
 
   return (
     <React.Fragment>
-      <div className="mt-[100px] max-w-[1200px] mx-auto">
+      <div className="mt-[100px] max-w-[1200px] mx-auto px-[24px] lg:px-0">
         <div className="w-[70%]">
-          <PostHero post={post} />
-          <Blocks blocks={layout} />
+          <div className="mb-[30px]">
+            <PostHero post={post} />
+          </div>
+          <div className="mb-[30px]">
+            <Blocks blocks={layout} />
+          </div>
           {/* {enablePremiumContent && <PremiumContent postSlug={slug as string} disableTopPadding />} */}
         </div>
       </div>
