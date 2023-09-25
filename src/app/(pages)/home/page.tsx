@@ -194,7 +194,7 @@ function Homepage() {
                         </div>
                       )}
                       <div className={classes.actionBar}>
-                        <div className="text-white font-outfit text-[10.246px] font-medium  leading-[120%] lg:tracking-[-0.32px] rounded-[8px] p-[11.7px] bg-[#9C9C9C]">
+                        <div className="text-white font-outfit text-[11.71px] font-medium  leading-[120%] lg:tracking-[-0.32px] rounded-[8px] py-[12px] px-[17.565px] bg-[#9C9C9C]">
                           <span className="mr-1">by</span> {posts[0]?.populatedAuthors[0]?.name}
                         </div>
                         <Link href={`/posts/${post.slug}`} className={classes.linkToArticle}>

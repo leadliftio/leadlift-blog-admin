@@ -21,35 +21,38 @@ export const RelatedPosts: React.FC<RelatedPostsProps> = props => {
 
   return (
     <div className={classes.relatedPosts}>
-      <div className="max-w-1200px mx-auto px-[20px] lg:px-0">
-        {introContent && (
+      <div className="max-w-[1200px] mx-auto px-[20px] lg:px-0">
+        {/* {introContent && (
           <Gutter className={classes.introContent}>
-            {/* <RichText content={introContent} /> */}
+            <RichText content={introContent} />
             <div className={classes.introContentHeader}>{serialize(introContent)}</div>
           </Gutter>
+        )} */}
+        {introContent && (
+          <div className={classes.introContentHeader}>{serialize(introContent)}</div>
         )}
-        <Gutter>
-          <div className={classes.grid}>
-            {docs?.map((doc, index) => {
-              if (typeof doc === 'string') return null
+        {/* <Gutter> */}
+        <div className={classes.grid}>
+          {docs?.map((doc, index) => {
+            if (typeof doc === 'string') return null
 
-              return (
-                <div
-                  key={index}
-                  className={[
-                    classes.column,
-                    docs.length === 2 && classes['cols-half'],
-                    docs.length >= 3 && classes['cols-thirds'],
-                  ]
-                    .filter(Boolean)
-                    .join(' ')}
-                >
-                  <Card relationTo={relationTo} doc={doc} showCategories />
-                </div>
-              )
-            })}
-          </div>
-        </Gutter>
+            return (
+              <div
+                key={index}
+                className={[
+                  classes.column,
+                  docs.length === 2 && classes['cols-half'],
+                  docs.length >= 3 && classes['cols-thirds'],
+                ]
+                  .filter(Boolean)
+                  .join(' ')}
+              >
+                <Card relationTo={relationTo} doc={doc} showCategories />
+              </div>
+            )
+          })}
+        </div>
+        {/* </Gutter> */}
       </div>
     </div>
   )
