@@ -218,7 +218,7 @@ export function Header() {
           {/* <div className="w-screen h-screen overflow-hidden"> */}
           <div
             className={`w-full bg-[#EDF0F8] h-[600px] rounded-[25px] px-[16px] py-[24px] fixed z-[8080] flex flex-col divide-y-2 shadow-card transition-all duration-500 ${
-              isOpen ? 'translate-y-[0]' : 'translate-y-[-550px] z-[8500]'
+              isOpen ? 'translate-y-[0]' : 'translate-y-[-600px] z-[8500]'
             }`}
             ref={mobileNavRef}
           >
