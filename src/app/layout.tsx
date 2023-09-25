@@ -43,7 +43,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={`${outfit.variable} ${poppins.variable} ${open_sans.variable}`}>
         <Providers>
           <AdminBar />
-          {/* @ts-expect-error Server Component */}
           <Header />
           <div className="pt-[45px]">{children}</div>
           {/* @ts-expect-error */}
