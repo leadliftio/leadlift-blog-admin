@@ -46,24 +46,34 @@ export async function Navbar() {
     }
   }
 
-  // // React.useEffect(() => {
-  // if (!isOpen) {
-  //   document.body.style.overflowY = 'scroll'
-  // } else {
-  //   document.body.style.overflowY = 'hidden'
-  // }
-  // // }, [isOpen]);
-
   // React.useEffect(() => {
-  //   if (isDropdownOpen) {
-  //     document.addEventListener('mousedown', handleClickOutside)
-  //   } else {
-  //     document.removeEventListener('mousedown', handleClickOutside)
-  //   }
-  //   return () => {
-  //     document.removeEventListener('mousedown', handleClickOutside)
-  //   }
-  // }, [isDropdownOpen])
+  if (!isOpen) {
+    if (typeof window !== 'undefined') {
+      document.body.style.overflowY = 'scroll'
+    }
+  } else {
+    if (typeof window !== 'undefined') {
+      document.body.style.overflowY = 'hidden'
+    }
+  }
+  // }, [isOpen]);
+
+  React.useEffect(() => {
+    if (isDropdownOpen) {
+      if (typeof window !== 'undefined') {
+        document.addEventListener('mousedown', handleClickOutside)
+      }
+    } else {
+      if (typeof window !== 'undefined') {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }
+  }, [isDropdownOpen])
 
   return (
     <>
