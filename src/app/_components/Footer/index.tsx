@@ -27,25 +27,25 @@ export async function Footer() {
         <div className="w-full flex flex-col">
           <div className="footer-links md:mb-8 flex flex-col md:flex-row items-start md:items-center justify-center gap-[18px]">
             <div className="flex lg:absolute lg:left-0">
-              <Link href={'/'} className="">
+              <Link href={'https://leadlift.io'} className="">
                 <Image src={brandLogo} alt="LeadLift" className="h-[32px] w-fit" />
               </Link>
             </div>
             <ul className="mb-0 flex flex-wrap md:flex-nowrap text-center justify-center items-center gap-8 gap-y-[10px] md:gap-16 px-5">
               <Link
-                href="/terms-of-use"
+                href="https://leadlift.io/terms-of-use"
                 className="font-outfit text-brandBlack text-base md:text-[18px] font-normal flex-1 flex-grow flex-nowrap flex m-0"
               >
                 Terms of use
               </Link>
               <Link
-                href="/privacy-policy"
+                href="https://leadlift.io/privacy-policy"
                 className="font-outfit text-brandBlack text-base md:text-[18px] font-normal m-0"
               >
                 Privacy policy
               </Link>
               <Link
-                href="/#about"
+                href="https://leadlift.io/#about"
                 className="font-outfit text-brandBlack text-base md:text-[18px] font-normal m-0"
               >
                 About Leadlift

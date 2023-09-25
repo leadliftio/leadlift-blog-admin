@@ -168,96 +168,134 @@ export function Header() {
                 size={24}
                 rounded
               /> */}
-                  {isOpen ? <img src={MenuIcon} alt="" /> : <img src={CloseMenu} alt="" />}
+                  {isOpen ? (
+                    // <img src={MenuIcon} alt="" />
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M28 10.3333H4C3.45333 10.3333 3 9.88001 3 9.33334C3 8.78668 3.45333 8.33334 4 8.33334H28C28.5467 8.33334 29 8.78668 29 9.33334C29 9.88001 28.5467 10.3333 28 10.3333Z"
+                        fill="#494949"
+                      />
+                      <path
+                        d="M28 17H4C3.45333 17 3 16.5467 3 16C3 15.4533 3.45333 15 4 15H28C28.5467 15 29 15.4533 29 16C29 16.5467 28.5467 17 28 17Z"
+                        fill="#494949"
+                      />
+                      <path
+                        d="M28 23.6667H4C3.45333 23.6667 3 23.2133 3 22.6667C3 22.12 3.45333 21.6667 4 21.6667H28C28.5467 21.6667 29 22.12 29 22.6667C29 23.2133 28.5467 23.6667 28 23.6667Z"
+                        fill="#494949"
+                      />
+                    </svg>
+                  ) : (
+                    // <img src={CloseMenu} alt="" />
+                    <svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g id="Menu / Close_MD">
+                        <path
+                          id="Vector"
+                          d="M8.00004 24L24 8M24 24L7.99995 8"
+                          stroke="#494949"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                    </svg>
+                  )}
                 </div>
               </div>
             </div>
           </nav>
-          <div className="w-screen h-screen overflow-hidden">
-            <div
-              className={`w-full bg-[#EDF0F8] h-[550px] rounded-[25px] px-[16px] py-[24px] fixed z-[8080] flex flex-col divide-y-2 shadow-card transition-all duration-500 ${
-                isOpen ? 'translate-y-[0]' : 'translate-y-[-550px] z-[8500]'
-              }`}
-              ref={mobileNavRef}
-            >
-              <div className="h-[90%] pt-[65px] pb-[16px] flex flex-col justify-between relative z-50">
-                <div className="flex flex-col gap-[20px] text-brandBlack font-normal font-openSans text-[20px]">
-                  <div className="text-brandBlack flex items-center gap-[6px] group relative">
-                    <Link href="https://leadlift.io/our-services" onClick={() => setOpen(false)}>
-                      Services
-                    </Link>
-                  </div>
-                  <div className=" flex flex-col gap-[15px] text-[#808080] font-openSans text-[18px] pb-4 font-normal border-b border-solid border-[#D9D9D9]">
-                    <a href="https://leadlift.io/our-services#social-media-management">
-                      Social media management
-                    </a>
-                    <a href="https://leadlift.io/our-services/#content-creation">
-                      Content creation
-                    </a>
-                    <a href="https://leadlift.io/our-services/#content-strategy">
-                      Content strategy
-                    </a>
-                    <a href="https://leadlift.io/our-services/#community-management">
-                      Community management
-                    </a>
-                  </div>
-                  <Link
-                    href="https://leadlift.io/pricing"
-                    onClick={() => setOpen(false)}
-                    className="pb-[20px] border-b border-solid border-[#D9D9D9]"
-                  >
-                    Pricing
-                  </Link>
-                  <Link
-                    href="https://blog.leadlift.io"
-                    className="text-brandBlack font-medium font-outfit text-[24px]"
-                    onClick={() => setOpen(false)}
-                  >
-                    Blog
+          {/* <div className="w-screen h-screen overflow-hidden"> */}
+          <div
+            className={`w-full bg-[#EDF0F8] h-[550px] rounded-[25px] px-[16px] py-[24px] fixed z-[8080] flex flex-col divide-y-2 shadow-card transition-all duration-500 ${
+              isOpen ? 'translate-y-[0]' : 'translate-y-[-550px] z-[8500]'
+            }`}
+            ref={mobileNavRef}
+          >
+            <div className="h-[90%] pt-[65px] pb-[16px] flex flex-col justify-between relative z-50">
+              <div className="flex flex-col gap-[20px] text-brandBlack font-normal font-openSans text-[20px]">
+                <div className="text-brandBlack flex items-center gap-[6px] group relative">
+                  <Link href="https://leadlift.io/our-services" onClick={() => setOpen(false)}>
+                    Services
                   </Link>
                 </div>
-                <div className="w-full mt-[30px]">
-                  <div
-                    className={`py-[12px] rounded-[8px] bg-brandGreen flex items-center justify-center gap-[10px] text-center text-white text-base font-poppins font-semibold border-none cursor-pointer z-50 w-full`}
-                    onClick={handleBookACall}
-                  >
-                    Book a call
-                  </div>
+                <div className=" flex flex-col gap-[15px] text-[#808080] font-openSans text-[18px] pb-4 font-normal border-b border-solid border-[#D9D9D9]">
+                  <a href="https://leadlift.io/our-services#social-media-management">
+                    Social media management
+                  </a>
+                  <a href="https://leadlift.io/our-services/#content-creation">Content creation</a>
+                  <a href="https://leadlift.io/our-services/#content-strategy">Content strategy</a>
+                  <a href="https://leadlift.io/our-services/#community-management">
+                    Community management
+                  </a>
+                </div>
+                <Link
+                  href="https://leadlift.io/pricing"
+                  onClick={() => setOpen(false)}
+                  className="pb-[20px] border-b border-solid border-[#D9D9D9]"
+                >
+                  Pricing
+                </Link>
+                <Link
+                  href="https://blog.leadlift.io"
+                  className="text-brandBlack font-medium font-outfit text-[24px]"
+                  onClick={() => setOpen(false)}
+                >
+                  Blog
+                </Link>
+              </div>
+              <div className="w-full mt-[30px]">
+                <div
+                  className={`py-[12px] rounded-[8px] bg-brandGreen flex items-center justify-center gap-[10px] text-center text-white text-base font-poppins font-semibold border-none cursor-pointer z-50 w-full`}
+                  onClick={handleBookACall}
+                >
+                  Book a call
                 </div>
               </div>
-              <div className="social-media w-full flex items-center justify-center gap-9 mb-6 py-[16px]">
-                <Link
-                  href="https://www.linkedin.com/company/lead_/"
-                  className="linkedin social-media-icon text-white"
-                >
-                  <FaLinkedinIn />
-                </Link>
-                <Link
-                  href="https://twitter.com/leadliftio"
-                  target="_blank"
-                  className="linkedin social-media-icon text-white"
-                >
-                  <FaTwitter />
-                </Link>
-                <Link
-                  href="https://www.facebook.com/leadliftio"
-                  target="_blank"
-                  className="linkedin social-media-icon text-white"
-                >
-                  <FaFacebookF />
-                </Link>
-                <Link
-                  href="https://www.instagram.com/leadliftio/"
-                  target="_blank"
-                  className="linkedin social-media-icon text-white"
-                >
-                  <FaInstagram />
-                </Link>
-              </div>
-
-              <div className="relative top-0 left-0 w-full h-screen bg-black/40" />
             </div>
+            <div className="social-media w-full flex items-center justify-center gap-9 mb-6 py-[16px]">
+              <Link
+                href="https://www.linkedin.com/company/lead_/"
+                className="linkedin social-media-icon text-white"
+              >
+                <FaLinkedinIn />
+              </Link>
+              <Link
+                href="https://twitter.com/leadliftio"
+                target="_blank"
+                className="linkedin social-media-icon text-white"
+              >
+                <FaTwitter />
+              </Link>
+              <Link
+                href="https://www.facebook.com/leadliftio"
+                target="_blank"
+                className="linkedin social-media-icon text-white"
+              >
+                <FaFacebookF />
+              </Link>
+              <Link
+                href="https://www.instagram.com/leadliftio/"
+                target="_blank"
+                className="linkedin social-media-icon text-white"
+              >
+                <FaInstagram />
+              </Link>
+            </div>
+
+            {/* <div className="relative top-0 left-0 w-full h-screen bg-black/40" /> */}
           </div>
+          {/* </div> */}
         </>
       </header>
     </>
