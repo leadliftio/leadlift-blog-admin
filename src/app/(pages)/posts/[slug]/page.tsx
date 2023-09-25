@@ -48,38 +48,38 @@ export default async function Post({ params: { slug } }) {
           <PostHero post={post} />
           <Blocks blocks={layout} />
           {/* {enablePremiumContent && <PremiumContent postSlug={slug as string} disableTopPadding />} */}
-          <Blocks
-            disableTopPadding
-            blocks={[
-              {
-                blockType: 'relatedPosts',
-                blockName: 'Related Posts',
-                relationTo: 'posts',
-                introContent: [
-                  {
-                    type: 'h4',
-                    children: [
-                      {
-                        text: 'More for you',
-                      },
-                    ],
-                  },
-                  {
-                    type: 'link',
-                    url: `/posts`,
-                    children: [
-                      {
-                        text: 'See more',
-                      },
-                    ],
-                  },
-                ],
-                docs: relatedPosts,
-              },
-            ]}
-          />
         </div>
       </div>
+      <Blocks
+        disableTopPadding
+        blocks={[
+          {
+            blockType: 'relatedPosts',
+            blockName: 'Related Posts',
+            relationTo: 'posts',
+            introContent: [
+              {
+                type: 'h4',
+                children: [
+                  {
+                    text: 'More for you',
+                  },
+                ],
+              },
+              {
+                type: 'link',
+                url: `/posts`,
+                children: [
+                  {
+                    text: 'See more',
+                  },
+                ],
+              },
+            ],
+            docs: relatedPosts,
+          },
+        ]}
+      />
     </React.Fragment>
   )
 }
