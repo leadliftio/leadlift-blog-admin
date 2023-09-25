@@ -7,7 +7,7 @@ import logo from './brandlogo.png'
 const LeadliftLogo = () => {
   return (
     <div>
-      <Image src={logo} alt="LeadLift" className="h-[32px] w-fit" />
+      <Image src={require('./brandlogo.png')} alt="LeadLift" className="h-[32px] w-fit" />
     </div>
   )
 }
