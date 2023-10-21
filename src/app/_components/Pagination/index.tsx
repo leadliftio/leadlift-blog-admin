@@ -26,15 +26,15 @@ export const Pagination: React.FC<{
         }}
       >
         {/* <Chevron rotate={90} className={classes.icon} /> */}
-        <BsArrowRight color="#044864" />
+        <BsArrowLeft color="#044864" />
         <span className="ml-3  text-[#044864] text-base font-outfit font-semibold leading-6 tracking-[0.08px]">
           Previous
         </span>
       </button>
       <div className={classes.pageRange}>
         <span className={classes.pageRangeLabel}>
-          Page <span className={classes.totalPages}>{page} </span> of
-          <span className={classes.totalPages}>{totalPages}</span>
+          Page <span className={classes.totalPage}>{page} </span> of
+          <span className={classes.totalPage}>{totalPages}</span>
         </span>
       </div>
       <button
@@ -48,7 +48,7 @@ export const Pagination: React.FC<{
         <span className="mr-3 text-[#044864] text-base font-outfit font-semibold leading-6 tracking-[0.08px]">
           Next
         </span>
-        <BsArrowLeft color="#044864" />
+        <BsArrowRight color="#044864" />
         {/* <Chevron rotate={-90} className={classes.icon} /> */}
       </button>
     </div>
