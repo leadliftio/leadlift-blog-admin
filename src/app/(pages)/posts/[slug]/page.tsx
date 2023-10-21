@@ -43,8 +43,8 @@ export default async function Post({ params: { slug } }) {
 
   return (
     <React.Fragment>
-      <div className="mt-[75px] lg:mt-[100px] max-w-[1200px] mx-auto px-[24px] lg:px-0">
-        <div className="w-full lg:w-[70%]">
+      <div className="max-w-[1200px] mx-auto px-[24px] lg:px-0">
+        <div className="w-full lg:w-full">
           <div className="mb-[30px]">
             <PostHero post={post} />
           </div>

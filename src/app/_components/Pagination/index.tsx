@@ -25,10 +25,14 @@ export const Pagination: React.FC<{
         }}
       >
         <Chevron rotate={90} className={classes.icon} />
+        <span className="ml-3  text-[#044864] text-base font-outfit font-semibold leading-6 tracking-[0.08px]">
+          Previous
+        </span>
       </button>
       <div className={classes.pageRange}>
         <span className={classes.pageRangeLabel}>
-          Page {page} of {totalPages}
+          Page <span className={classes.currentPage}>{page} </span> of{' '}
+          <span className={classes.totalPages}>{totalPages}</span>
         </span>
       </div>
       <button
@@ -39,6 +43,9 @@ export const Pagination: React.FC<{
           onClick(page + 1)
         }}
       >
+        <span className="ml-r text-[#044864] text-base font-outfit font-semibold leading-6 tracking-[0.08px]">
+          Next
+        </span>
         <Chevron rotate={-90} className={classes.icon} />
       </button>
     </div>
