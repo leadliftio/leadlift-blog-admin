@@ -3,6 +3,7 @@
 /* eslint-disable no-console */
 import React from 'react'
 import axios from 'axios'
+import dayjs from 'dayjs'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -79,7 +80,10 @@ function Homepage() {
           >
             <div className="absolute w-full h-full top-0 left-0 bg-[rgba(0,0,0,0.5)]  rounded-[40px]" />
             <div className="relative">
-              <p className="lg:w-[500px] w-full text-white font-semibold font-poppins text-[60px] leading-[120%] lg:tracking-[3px] lg:mb-[24px] ">
+              <p className="mb-[12px] text-[#F2F2F2] text-base font-medium font-outfit leading-[100%]">
+                {dayjs(posts[0]?.publishedOn).format('MMM DD, YYYY')}
+              </p>
+              <p className="lg:w-1/2 w-full text-white font-semibold font-poppins text-[21px] lg:text-[60px] leading-[120%] lg:tracking-[3px] lg:mb-[24px] ">
                 {/* Landing your first job as a Data analyst: My career switch */}
                 {posts[0]?.title}
               </p>
@@ -106,8 +110,8 @@ function Homepage() {
                     />
                   </svg>
                 </Link>
-                <div className="text-white font-outfit text-[16px] font-medium  leading-[120%] lg:tracking-[-0.32px] rounded-[8px] p-[16px] bg-[rgba(255,255,255,0.15)]">
-                  <span className="mr-1">by</span> {posts[0]?.populatedAuthors[0]?.name}
+                <div className="text-white font-outfit text-[16px] font-medium leading-[120%] lg:tracking-[-0.32px] rounded-[8px] p-[16px] bg-[rgba(255,255,255,0.15)]">
+                  <span className="mr-1"></span> {posts[0]?.populatedAuthors[0]?.name}
                 </div>
               </div>
             </div>
@@ -169,7 +173,7 @@ function Homepage() {
                         //   fill
                         // />
                         <Image
-                          src={`https://blog.leadlift.io/media/${posts[0]?.meta?.image?.filename}`}
+                          src={`https://blog.leadlift.io/media/${posts[i]?.meta?.image?.filename}`}
                           className="w-full h-[270px] object-cover rounded-[12px] lg:rounded-[17px]"
                           alt={post?.title}
                         />
@@ -195,7 +199,7 @@ function Homepage() {
                       )}
                       <div className={classes.actionBar}>
                         <div className="text-white font-outfit text-[11.71px] font-medium  leading-[120%] lg:tracking-[-0.32px] rounded-[8px] py-[12px] px-[17.565px] bg-[#9C9C9C]">
-                          <span className="mr-1">by</span> {posts[0]?.populatedAuthors[0]?.name}
+                          <span className="mr-1"></span> {posts[0]?.populatedAuthors[0]?.name}
                         </div>
                         <Link href={`/posts/${post.slug}`} className={classes.linkToArticle}>
                           Read article
