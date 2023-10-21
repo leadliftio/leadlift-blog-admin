@@ -68,7 +68,7 @@ function FeaturedArticles() {
     <div>
       <div className="bg-white">
         <div className="max-w-[1200px] mx-auto lg:py-[100px] py-[50px] px-[20px] lg:px-0">
-          <div className="mb-[40px] text-white font-poppins text-[21px] lg:text-[30px] font-semibold lg:tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] p-[20px] w-fit">
+          <div className="mb-[40px] text-white font-poppins text-[21px] lg:text-[30px] font-semibold lg:tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] p-3 lg:p-[20px] w-fit">
             Featured Articles
           </div>
         </div>
@@ -76,7 +76,7 @@ function FeaturedArticles() {
       <div className={classes.purpleGradientBg}>
         <div className="max-w-[1200px] mx-auto lg:py-[44px] py-[32px] px-[20px] lg:px-0">
           <div className="flex justify-between items-center lg:mb-[40px] mb-[20px]">
-            <div className="text-white font-poppins text-[21px] lg:text-[30px] font-semibold lg:tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] w-fit p-[20px]">
+            <div className="text-white font-poppins text-[21px] lg:text-[30px] font-semibold lg:tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] w-fit p-3 lg:p-[20px]">
               Featured Articles
             </div>
             <Link href={'/posts'} className={classes.seeMore}>
@@ -143,8 +143,8 @@ function FeaturedArticles() {
                         <div className={classes.body}>
                           {post?.meta?.description && (
                             <p className={classes.description}>
-                              {post?.meta?.description.slice(0, 35)}
-                              {post?.meta?.description.length >= 35 && '...'}
+                              {post?.meta?.description}
+                              {/* {post?.meta?.description.length >= 35 && '...'} */}
                             </p>
                           )}
                         </div>
