@@ -7,7 +7,13 @@
   gap: calc(var(--base) / 2);
   justify-content: space-between;
   width: 100%;
+  text-transform: none;
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  background: #FFF;
 }
+
 
 .button {
   all: unset;
@@ -25,6 +31,7 @@
   border-radius: 8px;
   background: var(--Slider-and-3-dot-menu, #DFEBF0);
   box-sizing: border-box;
+  text-transform: none;
 
   &:disabled {
     cursor: not-allowed;
@@ -38,7 +45,7 @@
   height: calc(var(--base) / 2);
 }
 
-.currentPage{
+.pageRangeLabel{
   color: var(--secondary-text-2, #808080);
   /* Open Sans/Body Medium/Semi Bold */
   font-family: Open Sans;

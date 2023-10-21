@@ -1,4 +1,5 @@
 import React from 'react'
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 
 import { Chevron } from '../Chevron'
 
@@ -24,14 +25,15 @@ export const Pagination: React.FC<{
           onClick(page - 1)
         }}
       >
-        <Chevron rotate={90} className={classes.icon} />
+        {/* <Chevron rotate={90} className={classes.icon} /> */}
+        <BsArrowRight color="#044864" />
         <span className="ml-3  text-[#044864] text-base font-outfit font-semibold leading-6 tracking-[0.08px]">
           Previous
         </span>
       </button>
       <div className={classes.pageRange}>
         <span className={classes.pageRangeLabel}>
-          Page <span className={classes.currentPage}>{page} </span> of{' '}
+          Page <span className={classes.totalPages}>{page} </span> of
           <span className={classes.totalPages}>{totalPages}</span>
         </span>
       </div>
@@ -43,10 +45,11 @@ export const Pagination: React.FC<{
           onClick(page + 1)
         }}
       >
-        <span className="ml-r text-[#044864] text-base font-outfit font-semibold leading-6 tracking-[0.08px]">
+        <span className="mr-3 text-[#044864] text-base font-outfit font-semibold leading-6 tracking-[0.08px]">
           Next
         </span>
-        <Chevron rotate={-90} className={classes.icon} />
+        <BsArrowLeft color="#044864" />
+        {/* <Chevron rotate={-90} className={classes.icon} /> */}
       </button>
     </div>
   )
