@@ -25,7 +25,7 @@ export const Card: React.FC<{
     orientation = 'vertical',
   } = props
 
-  const { slug, title, categories, meta } = doc || {}
+  const { slug, title, categories, meta, populatedAuthors } = doc || {}
   const { description, image: metaImage } = meta || {}
 
   const hasCategories = categories && Array.isArray(categories) && categories.length > 0
@@ -59,9 +59,8 @@ export const Card: React.FC<{
           </div>
         )}
         <div className={classes.actionBar}>
-          <div className="text-white font-outfit text-[10.246px] font-medium  leading-[120%] lg:tracking-[-0.32px] rounded-[8px] p-[11.7px] bg-[#9C9C9C]">
-            {/* <span className="mr-1">by</span> {posts[0]?.populatedAuthors[0]?.name} */}
-            Demo Author
+          <div className="text-white font-outfit text-[10.246px] font-medium  leading-[120%] lg:tracking-[-0.32px] rounded-[6px] p-[11.7px] bg-[#9C9C9C] h-[40px] flex justify-center items-center">
+            <span className="mr-1"></span> {populatedAuthors[0]?.name}
           </div>
           <Link href={href} className={classes.linkToArticle}>
             Read article

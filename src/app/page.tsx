@@ -76,7 +76,7 @@ function Homepage() {
               <p className="mb-[12px] text-[#F2F2F2] text-base font-medium font-outfit leading-[100%]">
                 {dayjs(posts[0]?.publishedOn).format('MMM DD, YYYY')}
               </p>
-              <p className="lg:w-[500px] w-full text-white font-semibold font-poppins text-[28px] lg:text-[60px] leading-[120%] lg:tracking-[3px] lg:mb-[24px] ">
+              <p className="lg:w-1/2 w-full text-white font-semibold font-poppins text-[28px] lg:text-[60px] leading-[120%] lg:tracking-[3px] lg:mb-[24px] ">
                 {/* Landing your first job as a Data analyst: My career switch */}
                 {posts[0]?.title}
               </p>

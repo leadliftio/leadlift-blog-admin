@@ -32,7 +32,7 @@ export const RelatedPosts: React.FC<RelatedPostsProps> = props => {
           <div className={classes.introContentHeader}>{serialize(introContent)}</div>
         )}
         {/* <Gutter> */}
-        <div className={classes.grid}>
+        <div className={'w-full grid grid-cols-2 gap-[25px] lg:gap-[50px]'}>
           {docs?.map((doc, index) => {
             if (typeof doc === 'string') return null
 

@@ -202,7 +202,7 @@ export interface Post {
   id: string;
   title: string;
   categories?: string[] | Category[];
-  publishedOn?: string;
+  publishedOn ?: string;
   authors?: string[] | User[];
   populatedAuthors?: {
     id?: string;
