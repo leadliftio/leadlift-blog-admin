@@ -65,6 +65,9 @@ function Homepage() {
           <div className="mb-[40px] text-white font-poppins text-[21px] lg:text-[30px] font-semibold lg:tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] p-3 lg:p-[20px] w-fit">
             Latest Article
           </div>
+          <div className="mb-[40px] text-white font-poppins text-[21px] lg:text-[30px] font-semibold lg:tracking-[-1.8px] leading-[32px] rounded-[12px] bg-[#6060AF] p-3 lg:p-[20px] w-fit">
+            Latest Article
+          </div>
           <div
             className={`relative w-full h-[400px] lg:h-[760px] rounded-[20px] md:rounded-[40px] flex flex-col lg:flex-row justify-end lg:justify-between items-start lg:items-end gap-[40px] lg:gap-0  bg-cover bg-center bg-no-repeat p-[24px] lg:p-[48px]`}
             style={{
